@@ -12,8 +12,10 @@ This roadmap will take you from **beginner to advanced** in **Yocto Project**, i
 ✅ Learn cybersecurity best practices when working with embedded Linux.
 
 ### **📚 Learning Resources:**
+- 🎥 [Embedded Linux with Yocto](https://www.youtube.com/watch?v=9vsu67uMcko&list=PLEBQazB0HUyTpoJoZecRK6PpDG31Y7RPB)
+- 🎥 [Yocto Project Introduction] (https://www.youtube.com/watch?v=yuE7my3KOpo)
+- 🎥 [Yocto Tutorial](https://www.youtube.com/watch?v=5fj05BWryhM&list=PLwqS94HTEwpQmgL1UsSwNk_2tQdzq3eVJ)
 - 📖 [Yocto Project Quick Start Guide](https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html)
-- 🎥 [Bootlin's Yocto Training Videos](https://bootlin.com/blog/yocto-project-training-videos/)
 - 📖 [Yocto Mega-Manual (Reference)](https://docs.yoctoproject.org/ref-manual/index.html)
 
 ### **🛠️ Hands-On Tasks:**
