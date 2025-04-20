@@ -1,31 +1,26 @@
 ## Project repository
 
-======================================================================
+Welcome to my page, fellow engineers! I'm a software enthusiast specializing in Embedded Systems, with a passion for solving real-world challenges in development and testing workflows.
 
-Welcome fellow engineers to my page. I am a software enthusiasit working on Embedded systems. 
-I created this project repo based on the problems I faced time to time in my work.
+This repository is a collection of tools and mini-projects that I've built over time, inspired by practical problems I’ve encountered in my work.
 
-The projects created in this repository are oriented towards creating handy tools supporting in the development, testing, configuration and management of software. 
-Refer to each of the branches which are breifly described below:
+Each project is designed to assist with various aspects of embedded software — from development and testing to configuration and system management.
+
+Explore the individual branches, each containing a focused solution. A brief description of each is provided below.
 
 ### Yocto Project 
-
 ----------------------------------------------------------------------
-
-A brief setup of an Yocto project over Poky ***In construction***
+***In construction***
+A brief setup of an Yocto project over Poky 
 
 ### PM_Rest_API_handlers
-
 ----------------------------------------------------------------------
-
-+ A list of library files that you can use to fetch data from JIRA, Confluence and Gitlab
-+ These libraries are created to minimize number of API calls while fetching the data resourcefully
++ A curated set of Python library modules for efficiently retrieving data from JIRA, Confluence, and GitLab APIs.
++ These libraries are designed with performance in mind — they minimize API calls and optimize data access, enabling faster, more resource-efficient integration into your automation or reporting pipelines.
 
 
 ### Docker_based_HIL_testing
-
 ----------------------------------------------------------------------
-
 + A minimal implementation of a CAN bus simulation environment using Docker containers that send, listen to, and log CAN messages over a virtual CAN interface (vcan0)
 + The provided docker-compose setup can be extended to interact with physical CAN-enabled devices connected to the host Linux system (e.g., via USB CAN adapters like SocketCAN-compatible interfaces), assuming the host exposes them to the containers.
 + Ideal for rapid testing of HIL setups, CAN message flow validation, and embedded system simulations without needing physical CAN hardware
