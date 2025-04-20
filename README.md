@@ -1,6 +1,7 @@
 ## Project repository
 
-Welcome to my page, fellow engineers! I'm a software enthusiast specializing in Embedded Systems, with a passion for solving real-world challenges in development and testing workflows.
+**Welcome to my page, fellow engineers!** 
+I'm a software enthusiast working on Embedded Systems, with a passion for solving real-world challenges in development and testing workflows. I specialize in streamlining development and testing workflows, ensuring compliance with industry standards like ASPICE, ISO 26262, and DO-178B.
 
 This repository is a collection of tools and mini-projects that I've built over time, inspired by practical problems I’ve encountered in my work.
 
