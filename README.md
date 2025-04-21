@@ -1,6 +1,6 @@
 ## Docker based HIL testing
 
-This branch provides a demonstration of simulating a CAN network for a HIL simulation using Docker images. 
+This branch provides a demonstration of simulating a CAN network for a HIL simulation using Docker images. This is purely a virtual HIL simulation.
 
 Many embedded simulations rely on network interfaces. The Linux kernel treats CAN like a network layer, and to simulate it virtually, we need to load the corresponding driver module — in this case, vcan.
 
@@ -13,3 +13,5 @@ Many embedded simulations rely on network interfaces. The Linux kernel treats CA
 This is basically like creating a minimal, scriptable CAN simulation testbench using only open-source tools and no licensing restrictions.
 
 The code repository of interest can be viewed by [Docker based HIL testing](https://github.com/ManiRajan1/Project_repositories/tree/Docker_based_HIL_testing)
+
+*_Note : For ease of implementing this proof of concept (PoC), Docker containers are run in privileged mode. This allows direct access to the host's networking stack and kernel modules, enabling setup and communication over the virtual CAN interface (vcan0), which is managed by the Linux kernel_*
