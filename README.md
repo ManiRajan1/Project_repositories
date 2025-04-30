@@ -9,7 +9,7 @@ The entire project is demonstrated by two sections.
 In this section a samples of a metadata produced by the tools are included by the structure
 ```bash
 .
-├── data (./data)
+├── [data] (./data)
 │   ├── releases
 │   │   └── release_info.json
 │   ├── requirement_data
@@ -27,7 +27,7 @@ In this section a samples of a metadata produced by the tools are included by th
 │       ├── release_001.json
 │       └── release_002.json
 ├── project_utilities 
-│   └── sample_reporting_system.py (./project_utilities/sample_reporting_system.py)
+│   └── [sample_reporting_system.py] (./project_utilities/sample_reporting_system.py)
 └── report_templates
     ├── report_template.html
     └── test_report_example.html (./report_templates/test_report_example.html)
