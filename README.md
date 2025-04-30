@@ -63,3 +63,16 @@ The related files are as below:
 ```
 
 The code repository of interest can be viewed by [PM_Rest_API_handlers](https://github.com/ManiRajan1/Project_repositories/tree/PM_Rest_API_handler) 
+
+In order to run the tool to extract a report based on your metadata:
+Replace your metadata into the files from *_./data_* and run the below commands in a bash shell.
+
+``` bash
+#!/bin/bash
+git init
+git clone https://github.com/ManiRajan1/Project_repositories.git
+cd Project_repositories/
+git fetch origin PM_Rest_API_handler:PM_Rest_API_handler 
+git checkout PM_Rest_API_handler 
+python3 ./project_utilities/sample_reporting_system.py
+``` 
