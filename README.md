@@ -36,7 +36,7 @@ The folder data contains metadata created for this project. Ideally the data is 
 
 The folder project utilities includes the logic necessary to create a report
 
-The report template has the jinja2 template of the resultant html and an example of the report.
+The report template has the jinja2 template of the resultant html and an example of the report [Download](https://github.com/ManiRajan1/Project_repositories/edit/PM_Rest_API_handler/report_templates/test_report_example.html)
 
 ### Section 2: 
 
@@ -61,6 +61,5 @@ The related files are as below:
 └── project_utilities
     └── project_specific_data_collector.py
 ```
-
 
 The code repository of interest can be viewed by [PM_Rest_API_handlers](https://github.com/ManiRajan1/Project_repositories/tree/PM_Rest_API_handler) 
