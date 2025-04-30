@@ -9,7 +9,7 @@ The entire project is demonstrated by two sections.
 In this section a samples of a metadata produced by the tools are included by the structure
 ```bash
 .
-├── [data] (./data)
+├── data
 │   ├── releases
 │   │   └── release_info.json
 │   ├── requirement_data
@@ -27,10 +27,10 @@ In this section a samples of a metadata produced by the tools are included by th
 │       ├── release_001.json
 │       └── release_002.json
 ├── project_utilities 
-│   └── [sample_reporting_system.py] (./project_utilities/sample_reporting_system.py)
+│   └── sample_reporting_system.py
 └── report_templates
     ├── report_template.html
-    └── test_report_example.html (./report_templates/test_report_example.html)
+    └── test_report_example.html
 ```
 The folder data contains metadata created for this project. Ideally the data is expected to created by data collectors (E.g. REST API calls) on specific time intervals such that the infrastructure is not overloaded and criticallity of the data.
 
@@ -54,12 +54,12 @@ The related files are as below:
 ``` bash
 .
 ├── libs
-│   ├── Confluence_handler.py(./libs/Confluence_handler.py)
-│   ├── Gitlab_handler.py(./libs/Confluence_handler.py)
-│   ├── Jira_handler.py(./libs/Confluence_handler.py)
-│   └── Xray_handler.py(./libs/Confluence_handler.py)
+│   ├── Confluence_handler.py
+│   ├── Gitlab_handler.py
+│   ├── Jira_handler.py
+│   └── Xray_handler.py
 └── project_utilities
-    └── project_specific_data_collector.py(./project_utilities/project_specific_data_collector.py)
+    └── project_specific_data_collector.py
 ```
 
 
