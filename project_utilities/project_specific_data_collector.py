@@ -159,7 +159,12 @@ class TestTraceabilityMapper:
         return Sw_Reqs_Matrix_Tests
 
 class DefectRetestMatrix(TestTraceabilityMapper):
-    def test_association_with_defects ()
+    #Implementation of the defect retest matrix and defects identification 
+    # Functionality to be added
+    def __init__(self, url, auth, release_id = None, logger = None):
+        pass
+    def test_association_with_defects ():
+        pass
 
 class Test_execution_Matrix ():
     """
