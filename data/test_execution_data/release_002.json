@@ -4,6 +4,7 @@
       "test_execution_status": "PASS",
       "execution_date": "2025-07-15",
       "executed_by": "Test_Automation_Team",
+      "defects": [],
       "execution_result_url": "https://jira.atlassian.net/browse/TC-011"
     },
     {
@@ -11,12 +12,14 @@
       "test_execution_status": "PASS",
       "execution_date": "2025-07-15",
       "executed_by": "Test_Automation_Team",
+      "defects": [],
       "execution_result_url": "https://jira.atlassian.net/browse/TC-012"
     },
     {
       "test_id": "COMP_TEST_008",
       "test_execution_status": "FAILED",
       "execution_date": "2025-07-15",
+      "defects": ["https://jira.atlassian.net/browse/JIRA-003"],
       "executed_by": "Test_Automation_Team",
       "execution_result_url": "https://jira.atlassian.net/browse/TC-013"
     }
@@ -26,7 +29,8 @@
       "test_id": "INT_TEST_003",
       "test_execution_status": "PASS",
       "execution_date": "2025-07-16",
-      "executed_by": "Test_Automation_Team",
+      "executed_by": "Manual_Tester",
+      "defects": [],
       "execution_result_url": "https://jira.atlassian.net/browse/TC-014"
     },
     {
@@ -42,7 +46,8 @@
       "test_id": "SWR_TEST_004",
       "test_execution_status": "ERROR_IN_TEST",
       "execution_date": "2025-07-16",
-      "executed_by": "Test_Automation_Team",
+      "executed_by": "Manual_Tester",
+      "defects": ["https://jira.atlassian.net/browse/JIRA-004"],
       "execution_result_url": "https://jira.atlassian.net/browse/TC-016"
     }
   ]
