@@ -1,4 +1,5 @@
-{ "component_tests": [
+{  
+    "component_tests": [
     {
       "test_id": "COMP_TEST_006",
       "test_execution_status": "PASS",

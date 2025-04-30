@@ -1,25 +1,25 @@
 {
-    "SWR_001": {
+    "SWR_1": {
       "description": "The system shall monitor vehicle speed and detect when it exceeds a threshold for more than 5 seconds.",
       "components": ["COMP_SpeedMonitor"],
       "interfaces": ["IF_SpeedData"]
     },
-    "SWR_002": {
+    "SWR_2": {
       "description": "The system shall issue a warning to the driver when prolonged overspeeding is detected.",
       "components": ["COMP_SpeedMonitor", "COMP_Display"],
       "interfaces": ["IF_WarningSignal"]
     },
-    "SWR_003": {
+    "SWR_3": {
       "description": "The system shall automatically trigger a mild brake command if overspeeding continues beyond 10 seconds.",
       "components": ["COMP_SpeedMonitor", "COMP_BrakeControl"],
       "interfaces": ["IF_BrakeCommand"]
     },
-    "SWR_004": {
+    "SWR_4": {
       "description": "The system shall log speed violations and the duration for each occurrence.",
       "components": ["COMP_SpeedMonitor"],
       "interfaces": ["IF_Logger"]
     },
-    "SWR_005": {
+    "SWR_5": {
       "description": "The system shall display visual cues when braking is triggered due to speed violation.",
       "components": ["COMP_Display", "COMP_BrakeControl"],
       "interfaces": ["IF_WarningSignal", "IF_BrakeCommand"]

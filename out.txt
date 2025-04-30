@@ -1,0 +1,33 @@
+.
+├── data
+│   ├── releases
+│   │   └── release_info.json
+│   ├── requirement_data
+│   │   ├── component_metadata.json
+│   │   ├── Interfaces_metadata.json
+│   │   ├── SW_requirements_metadata.json
+│   │   └── Unit_spec_meta_data.json
+│   ├── test_case_data
+│   │   ├── component_tests.json
+│   │   ├── integration_tests.json
+│   │   ├── interface_tests.json
+│   │   ├── sw_requirements_tests.json
+│   │   └── unit_tests.json
+│   └── test_execution_data
+│       ├── release_001.json
+│       └── release_002.json
+├── libs
+│   ├── Confluence_handler.py
+│   ├── Gitlab_handler.py
+│   ├── Jira_handler.py
+│   └── Xray_handler.py
+├── out.txt
+├── project_utilities
+│   ├── project_specific_data_collector.py
+│   └── sample_reporting_system.py
+├── README.md
+└── report_templates
+    ├── report_template.html
+    └── test_report_example.html
+
+9 directories, 22 files

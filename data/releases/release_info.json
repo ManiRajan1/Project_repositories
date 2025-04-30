@@ -1,7 +1,7 @@
 {
     "releases": [
       {
-        "release_id": "RELEASE_001",
+        "release_id": "release_001",
         "release_name": "Version 1.0",
         "release_date": "2025-06-01",
         "software_requirements": [
@@ -14,7 +14,7 @@
         ]
     },
       {
-        "release_id": "RELEASE_002",
+        "release_id": "release_002",
         "release_name": "Version 1.1",
         "release_date": "2025-07-15",
         "software_requirements": [
