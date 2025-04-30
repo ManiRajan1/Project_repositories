@@ -1,0 +1,49 @@
+{ "component_tests": [
+    {
+      "test_id": "COMP_TEST_006",
+      "test_execution_status": "PASS",
+      "execution_date": "2025-07-15",
+      "executed_by": "Test_Automation_Team",
+      "execution_result_url": "https://jira.atlassian.net/browse/TC-011"
+    },
+    {
+      "test_id": "COMP_TEST_007",
+      "test_execution_status": "PASS",
+      "execution_date": "2025-07-15",
+      "executed_by": "Test_Automation_Team",
+      "execution_result_url": "https://jira.atlassian.net/browse/TC-012"
+    },
+    {
+      "test_id": "COMP_TEST_008",
+      "test_execution_status": "FAILED",
+      "execution_date": "2025-07-15",
+      "executed_by": "Test_Automation_Team",
+      "execution_result_url": "https://jira.atlassian.net/browse/TC-013"
+    }
+  ],
+  "interface_tests": [
+    {
+      "test_id": "INT_TEST_003",
+      "test_execution_status": "PASS",
+      "execution_date": "2025-07-16",
+      "executed_by": "Test_Automation_Team",
+      "execution_result_url": "https://jira.atlassian.net/browse/TC-014"
+    },
+    {
+      "test_id": "INT_TEST_004",
+      "test_execution_status": "SKIPPED",
+      "execution_date": "2025-07-16",
+      "executed_by": "Test_Automation_Team",
+      "execution_result_url": "https://jira.atlassian.net/browse/TC-015"
+    }
+  ],
+  "software_requirement_based_tests": [
+    {
+      "test_id": "SWR_TEST_004",
+      "test_execution_status": "ERROR_IN_TEST",
+      "execution_date": "2025-07-16",
+      "executed_by": "Test_Automation_Team",
+      "execution_result_url": "https://jira.atlassian.net/browse/TC-016"
+    }
+  ]
+}

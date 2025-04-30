@@ -1,0 +1,33 @@
+{
+    "unit_tests": [
+      {
+        "id": "UNIT_TEST_001",
+        "description": "Validate speed threshold detection logic.",
+        "repo_url": "https://gitlab.com/your-org/COMP_SpeedMonitor/-/blob/main/tests/unit/test_threshold.c",
+        "linked_to": ["SWR_1"],
+        "link_type": "implements"
+      },
+      {
+        "id": "UNIT_TEST_002",
+        "description": "Ensure event is triggered after sustained high speed.",
+        "repo_url": "https://gitlab.com/your-org/COMP_SpeedMonitor/-/blob/main/tests/unit/test_event_trigger.c",
+        "linked_to": ["SWR_1"],
+        "link_type": "verifies"
+      },
+      {
+        "id": "UNIT_TEST_003",
+        "description": "Test if display updates correctly with new speed.",
+        "repo_url": "https://gitlab.com/your-org/COMP_Display/-/blob/main/tests/unit/test_display_speed.c",
+        "linked_to": ["SWR_3"],
+        "link_type": "implements"
+      },
+      {
+        "id": "UNIT_TEST_004",
+        "description": "Verify brake control activation logic when event received.",
+        "repo_url": "https://gitlab.com/your-org/COMP_BrakeControl/-/blob/main/tests/unit/test_brake_activation.c",
+        "linked_to": ["SWR_3"],
+        "link_type": "verifies"
+      }
+    ]
+  }
+  

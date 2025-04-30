@@ -1,0 +1,19 @@
+{
+    "rq_based_tests": [
+      {
+        "id": "TC-102",
+        "description": "Check if sustained speed above limit triggers event.",
+        "jira_url": "https://jira.atlassian.net/browse/TC-102",
+        "linked_to": ["SWR_2"],
+        "link_type": "validates"
+      },
+      {
+        "id": "TC-202",
+        "description": "Ensure BrakeControl activation logic complies with speed threshold requirement.",
+        "jira_url": "https://jira.atlassian.net/browse/TC-202",
+        "linked_to": ["SWR_3"],
+        "link_type": "validates"
+      }
+    ]
+  }
+  

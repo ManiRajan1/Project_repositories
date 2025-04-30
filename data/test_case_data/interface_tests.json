@@ -1,0 +1,27 @@
+
+{
+    "interface_tests": [
+      {
+        "id": "TC-101",
+        "description": "Verify SpeedMonitor publishes speed data on CAN correctly.",
+        "jira_url": "https://jira.atlassian.net/browse/TC-101",
+        "linked_to": ["SWR_1"],
+        "link_type": "tests"
+      },
+      {
+        "id": "TC-201",
+        "description": "Ensure display receives correct speed data from SpeedMonitor.",
+        "jira_url": "https://jira.atlassian.net/browse/TC-201",
+        "linked_to": ["SWR_3"],
+        "link_type": "tests"
+      },
+      {
+        "id": "TC-301",
+        "description": "Confirm BrakeControl reacts to SpeedMonitor event in correct timing.",
+        "jira_url": "https://jira.atlassian.net/browse/TC-301",
+        "linked_to": ["SWR_3"],
+        "link_type": "tests"
+      }
+    ]
+  }
+  

@@ -1,0 +1,32 @@
+{
+    "releases": [
+      {
+        "release_id": "RELEASE_001",
+        "release_name": "Version 1.0",
+        "release_date": "2025-06-01",
+        "software_requirements": [
+          "SWR_1",
+          "SWR_2"],
+        "components":[
+            "COMP_SpeedMonitor",
+            "COMP_Display",
+            "COMP_BrakeControl"
+        ]
+    },
+      {
+        "release_id": "RELEASE_002",
+        "release_name": "Version 1.1",
+        "release_date": "2025-07-15",
+        "software_requirements": [
+          "SWR_1",
+          "SWR_2"
+        ],
+        "components":[
+            "COMP_SpeedMonitor",
+            "COMP_Display",
+            "COMP_BrakeControl"
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,26 @@
+{
+    "integration_tests": [
+      {
+        "id": "IT-101",
+        "description": "Test the complete flow of event triggering after sustained high speed across SpeedMonitor, Display, and BrakeControl.",
+        "jira_url": "https://jira.atlassian.net/browse/IT-101",
+        "linked_to": ["SWR_1", "SWR_3"],
+        "link_type": "tests"
+      },
+      {
+        "id": "IT-102",
+        "description": "Verify data exchange between SpeedMonitor and Display through CAN interface and correct display update.",
+        "jira_url": "https://jira.atlassian.net/browse/IT-102",
+        "linked_to": ["SWR_1", "SWR_3"],
+        "link_type": "tests"
+      },
+      {
+        "id": "IT-103",
+        "description": "Check overall system behavior when event from SpeedMonitor is received by BrakeControl.",
+        "jira_url": "https://jira.atlassian.net/browse/IT-103",
+        "linked_to": ["SWR_3"],
+        "link_type": "tests"
+      }
+    ]
+  }
+  

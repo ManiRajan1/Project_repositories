@@ -1,0 +1,61 @@
+{
+    "component_tests": [
+      {
+        "id": "COMP_TEST_001",
+        "component_id": "COMP_SpeedMonitor",
+        "description": "Test speed threshold detection logic for SpeedMonitor component.",
+        "repo_url": "https://gitlab.com/your-org/COMP_SpeedMonitor/-/blob/main/tests/component/test_speed_threshold.c",
+        "linked_to": ["COMP_SpeedMonitor_SWR_1"],
+        "link_type": "validates"
+      },
+      {
+        "id": "COMP_TEST_002",
+        "component_id": "COMP_SpeedMonitor",
+        "description": "Ensure that the SpeedMonitor triggers the correct event after sustained high speed.",
+        "repo_url": "https://gitlab.com/your-org/COMP_SpeedMonitor/-/blob/main/tests/component/test_event_trigger.c",
+        "linked_to": ["COMP_SpeedMonitor_SWR_2"],
+        "link_type": "validates"
+      },
+      {
+        "id": "COMP_TEST_003",
+        "component_id": "COMP_Display",
+        "description": "Ensure the Display component correctly updates when new speed data is received from SpeedMonitor.",
+        "repo_url": "https://gitlab.com/your-org/COMP_Display/-/blob/main/tests/component/test_display_update.c",
+        "linked_to": ["COMP_Display_SWR_1"],
+        "link_type": "validates"
+      },
+      {
+        "id": "COMP_TEST_004",
+        "component_id": "COMP_BrakeControl",
+        "description": "Verify that BrakeControl activates when event from SpeedMonitor is received after the threshold is surpassed.",
+        "repo_url": "https://gitlab.com/your-org/COMP_BrakeControl/-/blob/main/tests/component/test_brake_activation.c",
+        "linked_to": ["COMP_BrakeControl_SWR_1"],
+        "link_type": "validates"
+      },
+      {
+        "id": "COMP_TEST_005",
+        "component_id": "COMP_SpeedMonitor",
+        "description": "Check that SpeedMonitor handles extreme values correctly (e.g., speed > max threshold).",
+        "repo_url": "https://gitlab.com/your-org/COMP_SpeedMonitor/-/blob/main/tests/component/test_extreme_values.c",
+        "linked_to": ["COMP_SpeedMonitor_SWR_1"],
+        "link_type": "validates"
+      },
+      {
+        "id": "COMP_TEST_006",
+        "component_id": "COMP_Display",
+        "description": "Test that the Display component handles edge cases, like no data or incorrect speed data.",
+        "repo_url": "https://gitlab.com/your-org/COMP_Display/-/blob/main/tests/component/test_display_edge_cases.c",
+        "linked_to": ["COMP_Display_SWR_1"],
+        "link_type": "validates"
+      },
+      {
+        "id": "COMP_TEST_007",
+        "component_id": "COMP_BrakeControl",
+        "description": "Ensure BrakeControl deactivates when speed drops below threshold.",
+        "repo_url": "https://gitlab.com/your-org/COMP_BrakeControl/-/blob/main/tests/component/test_brake_deactivation.c",
+        "linked_to": ["COMP_BrakeControl_SWR_1"],
+        "link_type": "validates"
+      }
+    ]
+  }
+  
