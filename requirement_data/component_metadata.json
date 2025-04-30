@@ -1,0 +1,18 @@
+{
+    "COMP_SpeedMonitor": {
+      "interfaces_provided": ["IF_SpeedData", "IF_WarningSignal", "IF_BrakeCommand"],
+      "interfaces_required": [],
+      "software_requirements": ["SWR_001", "SWR_002", "SWR_003", "SWR_004"]
+    },
+    "COMP_Display": {
+      "interfaces_provided": ["IF_WarningSignal"],
+      "interfaces_required": ["IF_BrakeCommand"],
+      "software_requirements": ["SWR_002", "SWR_005"]
+    },
+    "COMP_BrakeControl": {
+      "interfaces_provided": ["IF_BrakeCommand"],
+      "interfaces_required": [],
+      "software_requirements": ["SWR_003", "SWR_005"]
+    }
+  }
+  

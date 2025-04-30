@@ -1,0 +1,72 @@
+[{
+    "component": "COMP_SpeedMonitor",
+    "unit_specifications": [
+      {
+        "id": "COMP_SpeedMonitor_UNIT_0001",
+        "description": "Shall calculate sustained overspeed duration based on IF_SpeedData input.",
+        "inputs": ["IF_SpeedData"],
+        "outputs": [],
+        "conditions": ["speed > threshold for > 5 seconds"]
+      },
+      {
+        "id": "COMP_SpeedMonitor_UNIT_0002",
+        "description": "Shall trigger IF_WarningSignal if overspeeding exceeds 5 seconds.",
+        "inputs": ["speed history from IF_SpeedData"],
+        "outputs": ["IF_WarningSignal"],
+        "conditions": ["overspeed_duration > 5s && <= 10s"]
+      },
+      {
+        "id": "COMP_SpeedMonitor_UNIT_0003",
+        "description": "Shall issue IF_BrakeCommand if overspeeding exceeds 10 seconds.",
+        "inputs": ["speed history from IF_SpeedData"],
+        "outputs": ["IF_BrakeCommand"],
+        "conditions": ["overspeed_duration > 10s"]
+      },
+      {
+        "id": "COMP_SpeedMonitor_UNIT_0004",
+        "description": "Shall log overspeed events with timestamps and durations to IF_Logger.",
+        "inputs": ["speed threshold breaches"],
+        "outputs": ["IF_Logger"]
+      }
+    ]
+  },
+  {
+    "component": "COMP_Display",
+    "unit_specifications": [
+      {
+        "id": "COMP_Display_UNIT_0001",
+        "description": "Shall receive IF_WarningSignal and display a visual overspeed alert.",
+        "inputs": ["IF_WarningSignal"],
+        "outputs": ["HMI Display"],
+        "conditions": ["signal.active == true"]
+      },
+      {
+        "id": "COMP_Display_UNIT_0002",
+        "description": "Shall display a braking icon when IF_BrakeCommand is active.",
+        "inputs": ["IF_BrakeCommand"],
+        "outputs": ["HMI Display"],
+        "conditions": ["brake_command.active == true"]
+      }
+    ]
+  },
+  {
+    "component": "COMP_BrakeControl",
+    "unit_specifications": [
+      {
+        "id": "COMP_BrakeControl_UNIT_0001",
+        "description": "Shall receive IF_BrakeCommand and translate it into brake actuation.",
+        "inputs": ["IF_BrakeCommand"],
+        "outputs": ["brake actuator signal"],
+        "conditions": ["brake_command.intensity in valid range"]
+      },
+      {
+        "id": "COMP_BrakeControl_UNIT_0002",
+        "description": "Shall generate braking feedback signal to assist HMI display.",
+        "inputs": ["internal brake actuation result"],
+        "outputs": ["brake status"],
+        "conditions": ["status == 'applied' or 'released'"]
+      }
+    ]
+  }
+]
+  

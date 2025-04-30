@@ -1,0 +1,22 @@
+{
+  "IF_SpeedData": {
+    "description": "Carries real-time speed values from the vehicle sensors to monitoring components.",
+    "producers": ["COMP_SpeedMonitor"],
+    "consumers": []
+  },
+  "IF_WarningSignal": {
+    "description": "Used to display warnings on the HMI.",
+    "producers": ["COMP_SpeedMonitor"],
+    "consumers": ["COMP_Display"]
+  },
+  "IF_BrakeCommand": {
+    "description": "Signal to initiate braking in case of system-detected hazards.",
+    "producers": ["COMP_SpeedMonitor"],
+    "consumers": ["COMP_BrakeControl", "COMP_Display"]
+  },
+  "IF_Logger": {
+    "description": "Logging interface for persistent violation data.",
+    "producers": ["COMP_SpeedMonitor"],
+    "consumers": []
+  }
+}

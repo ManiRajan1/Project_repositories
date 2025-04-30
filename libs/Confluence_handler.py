@@ -1,5 +1,6 @@
 import requests
 
+
 class ConfluenceAPI:
 
 
