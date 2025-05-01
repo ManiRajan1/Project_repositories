@@ -47,7 +47,7 @@ To Read more:
 + Useful for prototyping embedded applications without requiring dedicated hardware.
 
 To Read more:
-[Docker_based_HIL_testing](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing/README.Virtual_HIL_testing.md)
+[Virtual_HIL_testing](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing/README.Virtual_HIL_testing.md)
 
 ---
 ### Minimal setup of the Yocto Project 
