@@ -23,7 +23,6 @@ In order to run the PoC, run the following commands on git bash
   sudo apt update
   sudo apt install can-utils
   sudo apt install iproute2   # in case it's missing
-  sudo ip link add dev vcan0 type vcan
   ```
 + Once installed, run the check below
   ```bash
