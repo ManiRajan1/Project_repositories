@@ -1,4 +1,4 @@
-## Docker based HIL testing
+## Virtual based HIL testing
 
 This branch provides a demonstration of simulating a CAN network for a HIL simulation using Docker images. This is purely a virtual HIL simulation.
 
