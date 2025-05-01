@@ -9,8 +9,6 @@
   - [HIL Testing Using Simulated Network](#hil-testing-using-simulated-network)
   - [Minimal Setup of the Yocto Project](#minimal-setup-of-the-yocto-project)
 - [Getting Started](#getting-started)
-- [Contributions](#contributions)
-- [License](#license)
 
 ---
 
@@ -40,6 +38,7 @@ This repository is a growing collection of **tools and mini-projects** created t
 To Read more:
 [PM_Compliance_handler](./tree/PM_Compliance_handler/README.md)
 
+## Projects Overview
 ---
 ### HIL testing using Simulated Network
 ---
@@ -62,5 +61,15 @@ To Read more:
 
 
 ---
+## 🚀 Getting Started
+---
+
+To clone and explore this repository:
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+```
+
 ![Last Commit](https://img.shields.io/github/last-commit/your-username/your-repo)
 ![Stars](https://img.shields.io/github/stars/your-username/your-repo?style=social)
