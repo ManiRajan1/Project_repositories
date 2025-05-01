@@ -14,7 +14,7 @@ Explore the individual branches, each containing a focused solution. A brief des
 ----------------------------------------------------------------------
 + A curated set of Python library modules for efficiently retrieving data from JIRA, Confluence, and GitLab APIs.
 + These libraries are designed with performance in mind — they minimize API calls and optimize data access, enabling faster, more resource-efficient integration into your automation or reporting pipelines.
-+ Also the project provides solution to report  test results effectively and in compliance to standards like DO178B and ASPICE.
++ Also the project provides solution to report  test results effectively and in compliance to standards like DO178B and ASPICE, through an automated pipeline.
 
 [PM_Rest_API_handlers](https://github.com/ManiRajan1/Project_repositories/blob/PM_Rest_API_handler/README.md)
 
