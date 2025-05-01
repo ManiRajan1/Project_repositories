@@ -15,23 +15,23 @@ Explore the individual branches, each containing a focused solution. A brief des
 + A curated set of Python library modules for efficiently retrieving data from JIRA, Confluence, and GitLab APIs.
 + These libraries are designed with performance in mind — they minimize API calls and optimize data access, enabling faster, more resource-efficient integration into your automation or reporting pipelines.
 + Also the project provides solution to report  test results effectively and in compliance to standards like DO178B and ASPICE, through an automated pipeline.
+Read further:
+[PM_Compliance_handler](https://github.com/ManiRajan1/Project_repositories/blob/PM_Compliance_handler/README.md)
 
-[PM_Compliance_handlers](https://github.com/ManiRajan1/Project_repositories/blob/PM_Compliance_handler/README.md)
 
-
-### Docker_based_HIL_testing
+### HIL testing using Simulated Network
 ----------------------------------------------------------------------
 + A minimal implementation of a CAN bus simulation environment using Docker containers that send, listen to, and log CAN messages over a virtual CAN interface (vcan0)
 + The provided docker-compose setup can be extended to interact with physical CAN-enabled devices connected to the host Linux system (e.g., via USB CAN adapters like SocketCAN-compatible interfaces), assuming the host exposes them to the containers.
 + Ideal for rapid testing of HIL setups, CAN message flow validation, and embedded system simulations without needing physical CAN hardware
-
+Read further:
 [Docker_based_HIL_testing](https://github.com/ManiRajan1/Project_repositories/blob/Docker_based_HIL_testing/README.md)
 
-### Yocto Project 
+### Minimal setup of Yocto Project 
 ----------------------------------------------------------------------
 ***In construction***
-A brief setup of an Yocto project over Poky 
-
+A minimal setup of an Yocto project over Poky 
+Read further:
 [Yocto project](https://github.com/ManiRajan1/Project_repositories/blob/Yocto_project/README.md)
 
 
