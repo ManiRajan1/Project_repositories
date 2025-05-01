@@ -59,7 +59,7 @@ The related files are as below:
     └── project_specific_data_collector.py
 ```
 
-The code repository of interest can be viewed by [PM_Rest_API_handlers](https://github.com/ManiRajan1/Project_repositories/tree/PM_Rest_API_handler) 
+The code repository of interest can be viewed by [PM_Compliance_handlers](https://github.com/ManiRajan1/Project_repositories/tree/PM_Rest_API_handler) 
 
 In order to run the tool to extract a report based on your metadata:
 Replace your metadata into the files from *_./data_* and run the below commands in a bash shell.
