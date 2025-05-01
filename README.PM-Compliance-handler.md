@@ -68,8 +68,8 @@ Replace your metadata into the files from *_./data_* and run the below commands 
 #!/bin/bash
 git clone https://github.com/ManiRajan1/Project_repositories.git
 cd Project_repositories/
-git fetch origin PM_Rest_API_handler:PM_Rest_API_handler 
-git checkout PM_Rest_API_handler 
+git fetch origin PM_Compliance_handler:PM_Compliance_handler
+git checkout PM_Compliance_handler
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install -r requirements.txt
