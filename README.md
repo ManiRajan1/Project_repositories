@@ -8,7 +8,7 @@
   - [Automated Project Compliance and Report Generation Handlers](#automated-project-compliance-and-report-generation-handlers)
   - [HIL Testing Using Simulated Network](#hil-testing-using-simulated-network)
   - [Minimal Setup of the Yocto Project](#minimal-setup-of-the-yocto-project)
-- [Getting Started](#getting-started)
+- [Getting Started](#-getting-started)
 
 --
 
@@ -51,7 +51,7 @@ To Read more:
 [Docker_based_HIL_testing](https://github.com/ManiRajan1/Project_repositories/blob/Docker_based_HIL_testing/README.md)
 
 ---
-### Minimal setup of Yocto Project 
+### Minimal setup of the Yocto Project 
 ---
 ***In construction***
 A minimal setup of an Yocto project over Poky.
