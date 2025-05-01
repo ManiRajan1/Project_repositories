@@ -33,7 +33,8 @@ In order to run the PoC, run the following commands on git bash
   candump vcan0   # starts logging
   cansend vcan0 123#0FF0F00F  # sends a frame
   ```
-** Getting started **
+**Getting started**
+
 Once the above checks are successful, you can clone and use the repo as below
 
 ``` bash
