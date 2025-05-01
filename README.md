@@ -8,7 +8,7 @@ Imagine a situation when developer need not spend time on process compliance but
 
 The entire project is demonstrated by two sections.
 ### Section 1:
-In this section a samples of a metadata produced by the tools are included by the structure
+In this section samples of metadata produced by the config management tools are included by the structure
 ```bash
 .
 ├── data
@@ -34,9 +34,9 @@ In this section a samples of a metadata produced by the tools are included by th
     ├── report_template.html
     └── test_report_example.html
 ```
-The folder data contains metadata created for this project. Ideally the data is expected to created by data collectors (E.g. REST API calls) on specific time intervals such that the infrastructure is not overloaded and criticallity of the data.
+The folder contains metadata created for this project and is not replicated from any existing source. Ideally the data is expected to created by data collectors (E.g. REST API calls) on specific time intervals such that the infrastructure is not overloaded and criticallity of the data.
 
-The report template has the jinja2 template of the resultant html and an example of the report [Download](https://github.com/ManiRajan1/Project_repositories/blob/PM_Rest_API_handler/report_templates/test_report_example.html)
+The report template has the jinja2 template of the resultant html and an example of the report [To Download](https://github.com/ManiRajan1/Project_repositories/blob/PM_Rest_API_handler/report_templates/test_report_example.html)
 
 ### Section 2: 
 
