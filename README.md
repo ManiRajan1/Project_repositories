@@ -2,40 +2,47 @@
 
 **Welcome to my page!** 
 
-I'm a software enthusiast working on Embedded Systems, with a passion for solving real-world challenges in development and testing workflows. I specialize in streamlining development and testing workflows, ensuring compliance with industry standards like ASPICE, ISO 26262, and DO-178B.
+## 🧑‍💻 About This Repository
 
-This repository is a collection of tools and mini-projects that I've built over time, inspired by practical problems I’ve encountered in my work.
+Welcome to my GitHub! I'm a software enthusiast focused on **Embedded Systems**, with a passion for optimizing development and testing workflows.
 
-Each project is designed to assist with various aspects of embedded software — from development and testing to configuration and system management.
+My work emphasizes:
 
-Explore the individual branches, each containing a focused solution. A brief description of each is provided below.
+- **Automation**
+- **Toolchain Integration**
+- **Compliance with standards** such as **ASPICE**, **ISO 26262**, and **DO-178B**
+
+This repository is a growing collection of **tools and mini-projects** created to address real-world engineering problems across the embedded software lifecycle.
+
+---
 
 ### Automated Project Compliance and Report Generation Handlers
 ----------------------------------------------------------------------
-+ A curated set of Python library modules for efficiently retrieving data from JIRA, Confluence, and GitLab APIs.
-+ These libraries are designed with performance in mind — they minimize API calls and optimize data access, enabling faster, more resource-efficient integration into your automation or reporting pipelines.
-+ Also the project provides solution to report  test results effectively and in compliance to standards like DO178B and ASPICE, through an automated pipeline.
++ A set of modular Python libraries designed to interact efficiently with **JIRA, Confluence, and GitLab APIs**.
++ Engineered for **performance and resource efficiency** by reducing redundant API calls and optimizing data access patterns.
++ Supports automated test result reporting in formats compliant with **DO-178B and ASPICE**, making it suitable for integration into CI/CD pipelines or documentation workflows.
 
-To Read further:
-[PM_Compliance_handler](https://github.com/ManiRajan1/Project_repositories/blob/PM_Compliance_handler/README.md)
+To Read more:
+[PM_Compliance_handler](./tree/PM_Compliance_handler/README.md)
 
 
 ### HIL testing using Simulated Network
 ----------------------------------------------------------------------
-+ A minimal implementation of a CAN bus simulation environment using Docker containers that send, listen to, and log CAN messages over a virtual CAN interface (vcan0)
-+ The provided docker-compose setup can be extended to interact with physical CAN-enabled devices connected to the host Linux system (e.g., via USB CAN adapters like SocketCAN-compatible interfaces), assuming the host exposes them to the containers.
-+ Ideal for rapid testing of HIL setups, CAN message flow validation, and embedded system simulations without needing physical CAN hardware.
++ A **lightweight Docker-based** setup simulating a CAN bus network using the virtual vcan0 interface.
++ Includes **services to send, receive, and log CAN messages**, ideal for early-stage HIL testing or validating CAN communication logic.
++ Easily extendable to interface with physical CAN devices connected to the host (e.g., via SocketCAN-compatible USB adapters).
++ Useful for prototyping embedded applications without requiring dedicated hardware.
 
-To Read further:
-[Docker_based_HIL_testing](https://github.com/ManiRajan1/Project_repositories/blob/Docker_based_HIL_testing/README.md)
+To Read more:
+[Docker_based_HIL_testing](./tree/Docker_based_HIL_testing/README.md)
 
 ### Minimal setup of Yocto Project 
 ----------------------------------------------------------------------
 ***In construction***
 A minimal setup of an Yocto project over Poky.
 
-To Read further:
-[Yocto project](https://github.com/ManiRajan1/Project_repositories/blob/Yocto_project/README.md)
+To Read more:
+[Yocto project](./tree/Yocto_project/README.md)
 
 
 
