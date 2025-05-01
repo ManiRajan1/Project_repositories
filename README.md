@@ -18,6 +18,23 @@ In order to run the PoC, run the following commands on git bash
 
 **Pre-requisities**
 + Docker-compose
++ Checks on bash
+  ```bash
+  sudo apt update
+  sudo apt install can-utils
+  sudo apt install iproute2   # in case it's missing
+  sudo ip link add dev vcan0 type vcan
+  ```
++ Once installed, run the check below
+  ```bash
+  sudo modprobe   # ✅ should work without extra installs
+  sudo ip link add dev vcan0 type vcan
+  sudo ip link set up vcan0
+  candump vcan0   # starts logging
+  cansend vcan0 123#0FF0F00F  # sends a frame
+  ```
+** Getting started **
+Once the above checks are successful, you can clone and use the repo as below
 
 ``` bash
 #!/bin/bash
@@ -26,8 +43,6 @@ cd Project_repositories/
 git fetch origin Docker_based_HIL_testing:Docker_based_HIL_testing
 git checkout Docker_based_HIL_testing
 docker-compose up
-
 ``` 
-
 
 *_Note : For ease of implementing this proof of concept (PoC), Docker containers are run in privileged mode. This allows direct access to the host's networking stack and kernel modules, enabling setup and communication over the virtual CAN interface (vcan0), which is managed by the Linux kernel_*
