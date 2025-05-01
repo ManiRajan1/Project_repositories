@@ -14,4 +14,20 @@ This is basically like creating a minimal, scriptable CAN simulation testbench u
 
 The code repository of interest can be viewed by [Docker based HIL testing](https://github.com/ManiRajan1/Project_repositories/tree/Docker_based_HIL_testing)
 
+In order to run the PoC, run the following commands on git bash
+
+**Pre-requisities**
++ Docker-compose
+
+``` bash
+#!/bin/bash
+git clone https://github.com/ManiRajan1/Project_repositories.git
+cd Project_repositories/
+git fetch origin Docker_based_HIL_testing:Docker_based_HIL_testing
+git checkout Docker_based_HIL_testing
+docker-compose up
+
+``` 
+
+
 *_Note : For ease of implementing this proof of concept (PoC), Docker containers are run in privileged mode. This allows direct access to the host's networking stack and kernel modules, enabling setup and communication over the virtual CAN interface (vcan0), which is managed by the Linux kernel_*
