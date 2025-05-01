@@ -47,7 +47,7 @@ To Read more:
 + Useful for prototyping embedded applications without requiring dedicated hardware.
 
 To Read more:
-[Docker_based_HIL_testing](https://github.com/ManiRajan1/Project_repositories/blob/Docker_based_HIL_testing/README.md)
+[Docker_based_HIL_testing](https://github.com/ManiRajan1/Project_repositories/blob/Docker_based_HIL_testing/README.Virtual_HIL_testing.md)
 
 ---
 ### Minimal setup of the Yocto Project 
@@ -56,7 +56,7 @@ To Read more:
 A minimal setup of an Yocto project over Poky.
 
 To Read more:
-[Yocto project](https://github.com/ManiRajan1/Project_repositories/blob/Yocto_project/README.md)
+[Yocto project](https://github.com/ManiRajan1/Project_repositories/blob/Yocto_project/README.Yocto_Project.md)
 
 ---
 
