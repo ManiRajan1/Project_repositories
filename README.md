@@ -71,5 +71,5 @@ git clone https://github.com/your-username/your-repo.git
 cd your-repo
 ```
 
-![Last Commit](https://img.shields.io/github/last-commit/your-username/your-repo)
-![Stars](https://img.shields.io/github/stars/your-username/your-repo?style=social)
+![Last Commit](https://img.shields.io/github/last-commit/Manirajan1/Project_repositories)
+![Stars](https://img.shields.io/github/stars/Manirajan1/Project_repositories?style=social)
