@@ -1,3 +1,19 @@
+# 🧰 Embedded Systems Tools & Automation
+---
+
+## 📚 Table of Contents
+
+- [About This Repository](#about-this-repository)
+- [Projects Overview](#projects-overview)
+  - [Automated Project Compliance and Report Generation Handlers](#automated-project-compliance-and-report-generation-handlers)
+  - [HIL Testing Using Simulated Network](#hil-testing-using-simulated-network)
+  - [Minimal Setup of the Yocto Project](#minimal-setup-of-the-yocto-project)
+- [Getting Started](#getting-started)
+- [Contributions](#contributions)
+- [License](#license)
+
+---
+
 ## Project repository
 
 **Welcome to my page!** 
@@ -45,4 +61,6 @@ To Read more:
 [Yocto project](./tree/Yocto_project/README.md)
 
 
-
+---
+![Last Commit](https://img.shields.io/github/last-commit/your-username/your-repo)
+![Stars](https://img.shields.io/github/stars/your-username/your-repo?style=social)
