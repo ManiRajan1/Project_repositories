@@ -3,9 +3,6 @@ The aim of this project is to provide a set of modular and reusable API handler 
 This objective of this project is to provide a solution for developers to update the necessary data for ASPICE assessments during the implementation, also automating the reports with compliance.
 Imagine a situation when developer need not spend time on process compliance but just do it as they progress on the work!!
 
-[PM_Rest_API_handlers](https://github.com/ManiRajan1/Project_repositories/blob/PM_Rest_API_handler/README.md)
-
-
 The entire project is demonstrated by two sections.
 ### Section 1:
 In this section samples of metadata produced by the config management tools are included by the structure
