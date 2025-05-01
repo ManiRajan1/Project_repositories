@@ -35,7 +35,7 @@ This repository is a growing collection of **tools and mini-projects** created t
 + Supports automated test result reporting in formats compliant with **DO-178B and ASPICE**, making it suitable for integration into CI/CD pipelines or documentation workflows.
 
 To Read more:
-[PM_Compliance_handler](https://github.com/ManiRajan1/Project_repositories/blob/PM_Compliance_handler/README.md)
+[PM_Compliance_handler](https://github.com/ManiRajan1/Project_repositories/blob/PM_Compliance_handler/README.PM-Compliance-handler.md)
 
 ## Projects Overview
 ---
