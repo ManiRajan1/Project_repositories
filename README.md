@@ -10,7 +10,6 @@
   - [Minimal Setup of the Yocto Project](#minimal-setup-of-the-yocto-project)
 - [Getting Started](#-getting-started)
 
---
 
 ## Project repository
 
@@ -30,7 +29,7 @@ This repository is a growing collection of **tools and mini-projects** created t
 
 ---
 ### Automated Project Compliance and Report Generation Handlers
----
+
 + A set of modular Python libraries designed to interact efficiently with **JIRA, Confluence, and GitLab APIs**.
 + Engineered for **performance and resource efficiency** by reducing redundant API calls and optimizing data access patterns.
 + Supports automated test result reporting in formats compliant with **DO-178B and ASPICE**, making it suitable for integration into CI/CD pipelines or documentation workflows.
@@ -41,7 +40,7 @@ To Read more:
 ## Projects Overview
 ---
 ### HIL testing using Simulated Network
----
+
 + A **lightweight Docker-based** setup simulating a CAN bus network using the virtual vcan0 interface.
 + Includes **services to send, receive, and log CAN messages**, ideal for early-stage HIL testing or validating CAN communication logic.
 + Easily extendable to interface with physical CAN devices connected to the host (e.g., via SocketCAN-compatible USB adapters).
@@ -52,17 +51,16 @@ To Read more:
 
 ---
 ### Minimal setup of the Yocto Project 
----
+
 ***In construction***
 A minimal setup of an Yocto project over Poky.
 
 To Read more:
 [Yocto project](https://github.com/ManiRajan1/Project_repositories/blob/Yocto_project/README.md)
 
+---
 
----
 ## 🚀 Getting Started
----
 
 To clone and explore this repository:
 
