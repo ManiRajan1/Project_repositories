@@ -56,7 +56,7 @@ To Read more:
 A minimal setup of an Yocto project over Poky.
 
 To Read more:
-[Yocto project](https://github.com/ManiRajan1/Project_repositories/blob/Yocto_project/README.Yocto_Project.md)
+[Yocto project](https://github.com/ManiRajan1/Project_repositories/blob/Yocto_project/README.Yocto_project.md)
 
 ---
 
