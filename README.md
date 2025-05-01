@@ -1,4 +1,4 @@
-## Configuration Mangament by API handlers
+## Automated Project Compliance and Report Generation Handlers
 The aim of this project is to provide a set of modular and reusable API handler libraries that enable seamless integration and management of projects running on popular CI/CD platforms.
 This objective of this project is to provide a solution for developers to update the necessary data for ASPICE assessments during the implementation, also automating the reports with compliance.
 Imagine a situation when developer need not spend time on process compliance but just do it as they progress on the work!!
