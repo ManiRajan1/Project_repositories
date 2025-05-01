@@ -36,7 +36,7 @@ This repository is a growing collection of **tools and mini-projects** created t
 + Supports automated test result reporting in formats compliant with **DO-178B and ASPICE**, making it suitable for integration into CI/CD pipelines or documentation workflows.
 
 To Read more:
-[PM_Compliance_handler](./tree/PM_Compliance_handler/README.md)
+[PM_Compliance_handler](./PM_Compliance_handler/README.md)
 
 ## Projects Overview
 ---
@@ -48,7 +48,7 @@ To Read more:
 + Useful for prototyping embedded applications without requiring dedicated hardware.
 
 To Read more:
-[Docker_based_HIL_testing](./tree/Docker_based_HIL_testing/README.md)
+[Docker_based_HIL_testing](./Docker_based_HIL_testing/README.md)
 
 ---
 ### Minimal setup of Yocto Project 
@@ -57,7 +57,7 @@ To Read more:
 A minimal setup of an Yocto project over Poky.
 
 To Read more:
-[Yocto project](./tree/Yocto_project/README.md)
+[Yocto project](./Yocto_project/README.md)
 
 
 ---
