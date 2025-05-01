@@ -3,14 +3,14 @@
 
 ## 📚 Table of Contents
 
-- [About This Repository](#about-this-repository)
+- [About This Repository](#-about-this-repository)
 - [Projects Overview](#projects-overview)
   - [Automated Project Compliance and Report Generation Handlers](#automated-project-compliance-and-report-generation-handlers)
   - [HIL Testing Using Simulated Network](#hil-testing-using-simulated-network)
   - [Minimal Setup of the Yocto Project](#minimal-setup-of-the-yocto-project)
 - [Getting Started](#getting-started)
 
----
+--
 
 ## Project repository
 
