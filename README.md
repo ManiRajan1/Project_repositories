@@ -68,7 +68,7 @@ To clone and explore this repository:
 
 ```bash
 git clone https://github.com/ManiRajan1/Project_repositories.git
-cd your-repo
+cd Project_repositories
 ```
 
 ![Last Commit](https://img.shields.io/github/last-commit/Manirajan1/Project_repositories)
