@@ -1,48 +1,64 @@
 ## Virtual HIL testing
 
-This branch provides a demonstration of simulating a CAN network for a HIL simulation using Docker images. This is purely a virtual HIL simulation.
+In automotive software development, testing embedded applications like CAN-based signal processing, UDS diagnostics, and XCP variable access often depends heavily on physical ECUs and test benches. This creates bottlenecks, increases costs, and slows down development.
 
-Many embedded simulations rely on network interfaces. The Linux kernel treats CAN like a network layer, and to simulate it virtually, we need to load the corresponding driver module — in this case, vcan.
+This project introduces a virtual test framework using Docker, QEMU, and RTOS simulators to emulate ARM-based control units and their communication behavior — without needing real hardware.
 
-**modprobe vcan**: This loads the vcan kernel module, enabling a virtual CAN interface — similar to configuring a restbus simulation in CANoe, but done via kernel-space in Linux. The lower layers of simulation are handled by vcan
+**Key Benefits**:
++ Faster Testing Cycles: Run tests early and often, even before hardware is ready.
++ Lower Costs: Reduce reliance on expensive hardware rigs for basic verification.
++ Flexible Abstraction: Simulate at multiple levels — from high-level Linux apps to bare-metal RTOS — to match specific testing needs.
++ Better Debugging: Simulate edge cases and protocol errors in a controlled environment.
++ Scalable: Easily integrates with CI/CD pipelines for continuous validation.
 
-**ip link add dev vcan0 type vcan**: Sets up the simulated CAN channel (vcan0).
+This approach helps engineering teams deliver higher-quality automotive software faster, while ensuring compliance with standards like ISO 26262 and AUTOSAR communication protocols.
 
-**cansend, candump**: Equivalent to CANoe generator and trace windows for sending and capturing frames.
+![Image : Abstraction Levels](./images/Abstraction_Virtual_HIL_Testing.png)
 
-This is basically like creating a minimal, scriptable CAN simulation testbench using only open-source tools and no licensing restrictions.
+## Strategy 
 
-The code repository of interest can be viewed by [Minimal setup to virtualize CAN bus-simulation](https://github.com/ManiRajan1/Project_repositories/tree/Virtual_HIL_testing)
+The solutions are classified into four branches:
 
-In order to run the PoC, run the following commands on git bash
++ The Base Branch which is [Virtual_HIL_testing]() holds shared infrastructure, documentation, and interfaces (e.g., CAN, UDS config definitions).
 
-**Pre-requisities**
-+ Docker-compose
-+ Checks on bash
-  ```bash
-  sudo apt update
-  sudo apt install can-utils
-  sudo apt install iproute2   # in case it's missing
-  ```
-+ Once installed, run the check below
-  ```bash
-  sudo modprobe   # ✅ should work without extra installs
-  sudo ip link add dev vcan0 type vcan
-  sudo ip link set up vcan0
-  candump vcan0   # starts logging
-  cansend vcan0 123#0FF0F00F  # sends a frame
-  ```
-**Getting started**
++ Feature Branches - Each branch focuses on one solution and contains the relevant tooling, Dockerfiles, QEMU configs, or RTOS simulators.
 
-Once the above checks are successful, you can clone and use the repo as below
+  + [Virtual_HIL_testing_Docker](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_Docker/docs/README.Virtual_HIL_testing_Docker.md) :	Simulate high-level Linux application in a Docker container
+  + [Virtual_HIL_testing_QEMU_Linux](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_QEMU/docs/README.Virtual_HIL_testing_QEMU.md) : Emulate an ARM-based Linux target via QEMU inside Docker or standalone
+  + [Virtual_HIL_testing_QEMU_Bare](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_bare/docs/README.Virtual_HIL_testing_bare.md) : Use QEMU to emulate ARM (with limited Linux or bare-metal configs)
+  + [Virtual_HIL_testing_RTOS](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_RTOS/docs/README.Virtual_HIL_testing_RTOS.md)	Use a bare-metal RTOS simulator like Renode or Keil for precision tests
 
-``` bash
-#!/bin/bash
-git clone https://github.com/ManiRajan1/Project_repositories.git
-cd Project_repositories/
-git fetch origin Docker_based_HIL_testing:Docker_based_HIL_testing
-git checkout Docker_based_HIL_testing
-docker-compose up
-``` 
-
-*_Note : For ease of implementing this proof of concept (PoC), Docker containers are run in privileged mode. This allows direct access to the host's networking stack and kernel modules, enabling setup and communication over the virtual CAN interface (vcan0), which is managed by the Linux kernel_*
+The folder structure is followed as below:
+```bash
+Virtual_HIL_testing/
+│
+├── docs/                      # Shared documentation across all branches
+│   └── README.md              # High-level overview (updated per branch if needed)
+│
+├── common/                   # Shared configs (e.g., CAN DBC, UDS profiles, test cases)
+│   ├── can_defs/
+│   ├── uds_profiles/
+│   └── xcp_variables/
+│
+├── simulation/               # Simulation-specific content (varies by branch)
+│   └── docker/               # Only in docker-linux branch
+│       ├── Dockerfile
+│       └── entrypoint.sh
+│
+│   └── qemu/                 # Only in qemu-linux or qemu-bare branches
+│       ├── qemu_config.json
+│       ├── bootloader.img
+│       └── run.sh
+│
+│   └── rtos_sim/             # Only in rtos-sim branch
+│       ├── renode_config.resc
+│       ├── freertos_app/
+│       └── test_scenarios/
+│
+├── tests/
+│   ├── integration/
+│   ├── protocol_validation/
+│   └── reports/
+│
+└── .gitlab-ci.yml / .github/ # Shared CI config (or custom per branch if needed)
+```
