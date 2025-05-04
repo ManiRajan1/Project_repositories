@@ -8,8 +8,9 @@ services:
     image: debian:bookworm-slim
     container_name: hil_simulator
     volumes:
-      - ./scripts:/scripts
+      - ./simulation/Docker:/scripts
       - /lib/modules:/lib/modules:ro
+    working_dir: /scripts
     command: ["bash", "/scripts/can_simulator.sh"]
     privileged: true
     network_mode: host
@@ -19,9 +20,10 @@ services:
     container_name: can_logger
     volumes:
       - ./logs:/logs
-      - ./scripts:/scripts
+      - ./simulation/Docker:/scripts
       - /lib/modules:/lib/modules:ro
-    command: ["bash", "/scripts/log_can.sh"]
+    working_dir: /scripts
+    command: ["bash", "log_can.sh"]
     depends_on:
       - simulator
     privileged: true
