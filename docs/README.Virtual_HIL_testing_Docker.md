@@ -40,9 +40,9 @@ Once the above checks are successful, you can clone and use the repo as below
 #!/bin/bash
 git clone https://github.com/ManiRajan1/Project_repositories.git
 cd Project_repositories/
-git fetch origin Docker_based_HIL_testing:Docker_based_HIL_testing
-git checkout Docker_based_HIL_testing
+git fetch origin Virtual_HIL_testing_Docker:Virtual_HIL_testing_Docker
+git checkout Virtual_HIL_testing_Docker
 docker-compose up
 ``` 
 
-*_Note : For ease of implementing this proof of concept (PoC), Docker containers are run in privileged mode. This allows direct access to the host's networking stack and kernel modules, enabling setup and communication over the virtual CAN interface (vcan0), which is managed by the Linux kernel_*
+For queries : raise an [Issue](https://github.com/ManiRajan1/Project_repositories/issues) with the identification of the branch 
