@@ -12,7 +12,7 @@ Many embedded simulations rely on network interfaces. The Linux kernel treats CA
 
 This is basically like creating a minimal, scriptable CAN simulation testbench using only open-source tools and no licensing restrictions.
 
-The code repository of interest can be viewed by [Docker based HIL testing](https://github.com/ManiRajan1/Project_repositories/tree/Virtual_HIL_testing)
+The code repository of interest can be viewed by [Minimal setup to virtualize CAN bus-simulation](https://github.com/ManiRajan1/Project_repositories/tree/Virtual_HIL_testing)
 
 In order to run the PoC, run the following commands on git bash
 
