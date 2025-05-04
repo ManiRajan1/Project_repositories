@@ -42,18 +42,10 @@ Virtual_HIL_testing/
 │
 ├── simulation/               # Simulation-specific content (varies by branch)
 │   └── docker/               # Only in docker-linux branch
-│       ├── Dockerfile
-│       └── entrypoint.sh
 │
-│   └── qemu/                 # Only in qemu-linux or qemu-bare branches
-│       ├── qemu_config.json
-│       ├── bootloader.img
-│       └── run.sh
+│   └── qemu/                 # Only in qemu-linux and qemu-bare branches
 │
 │   └── rtos_sim/             # Only in rtos-sim branch
-│       ├── renode_config.resc
-│       ├── freertos_app/
-│       └── test_scenarios/
 │
 ├── tests/
 │   ├── integration/
