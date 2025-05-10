@@ -1,0 +1,25 @@
+{
+    "comment":"This file replaces an Diagnostic description file  which has the UDS profile information",
+    "version": "1.0",
+    "UDS_Profile": {
+      "SessionControl": {
+        "RequestID": "0x7E0",
+        "ResponseID": "0x7E8",
+        "DefaultSession": "0x01",
+        "ProgrammingSession": "0x02"
+      },
+      "ReadDataByIdentifier": {
+        "DIDs": {
+          "0xF190": {
+            "name": "VIN",
+            "length": 17
+          },
+          "0xF187": {
+            "name": "ECU Serial Number",
+            "length": 10
+          }
+        }
+      }
+    }
+  }
+  
