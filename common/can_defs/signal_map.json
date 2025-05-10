@@ -1,0 +1,18 @@
+{   "comment":"This file replaces the DBC file and is used to define the CAN signals for the project.",
+    "version": "1.0",
+    "signals": [
+      {
+        "name": "LED_TOGGLE",
+        "can_id": "0x100",
+        "description": "Toggles LED status",
+        "data": ["0xAA"]
+      },
+      {
+        "name": "HEARTBEAT",
+        "can_id": "0x200",
+        "description": "Heartbeat monitoring signal",
+        "data": ["0x01"]
+      }
+    ]
+  }
+  
