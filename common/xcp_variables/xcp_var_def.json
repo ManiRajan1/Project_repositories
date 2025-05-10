@@ -1,0 +1,20 @@
+{   "comment":"This file contains the signal map of the XCP variables used in the project. There are different ways in which the file is represented in different projects like .a2l (text file used in calibration, measurement) ,.elf (binary file used in debugging) etc. This file is used to define the XCP variables for the project.",
+    "version": "1.0",
+    "XCP_Variables": [
+      {
+        "name": "EngineSpeed",
+        "address": "0x10001000",
+        "datatype": "uint16",
+        "unit": "rpm",
+        "description": "Current RPM read from simulated memory"
+      },
+      {
+        "name": "CoolantTemp",
+        "address": "0x10001004",
+        "datatype": "int8",
+        "unit": "°C",
+        "description": "Simulated coolant temperature"
+      }
+    ]
+  }
+  
