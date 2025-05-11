@@ -90,6 +90,6 @@ For queries : raise an [Issue](https://github.com/ManiRajan1/Project_repositorie
 + [Cisco dump from WireShark](https://www.wireshark.org/docs/man-pages/ciscodump.html)
 
 ## Improvements
-+ A single docker compose services stack that sets up and orchestrates the complete setup for a developer to start testing on one-click
++ A single docker compose services stack that sets up and orchestrates the complete setup for a developer to start testing on one-click, also exposing necessary ports and volumes for the inputs and logs.
 + A documentation demonstrating the usage of the tool.
 
