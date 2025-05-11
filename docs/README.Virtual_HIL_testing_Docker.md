@@ -49,6 +49,7 @@ sudo apt install -Y wireshark
 sudo ./simulation/Docker/can_simulator.sh
 ``` 
 Considering there is gcc preinstalled, run the following commands
+
 **Terminal1**
 ``` bash
 gcc -o simulation/simulator_ECU1/can_sim_ECU1.out simulation/simulator_ECU1/can_sim_ECU1.c
@@ -59,7 +60,7 @@ gcc -o simulation/simulator_ECU1/can_sim_ECU1.out simulation/simulator_ECU1/can_
 python3 ./simulation/simulator_ECU2/can_sim_ECU2.py 
 ```
 
-The transmitted and received data are shown in both the terminals. This can be coupled with a stream of modelled data to simulate a HIL system.
+The transmitted and received data are shown in both the terminals. This can be coupled with a stream of modelled data to simulate a HIL test bench.
 
 The data can also be visualized quickly by network protocol analyzers like Wireshark.
 
