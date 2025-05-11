@@ -39,10 +39,10 @@ To Read more:
 
 ## Projects Overview
 ---
-### HIL testing using Simulated Network
+### XIL testing using Simulated Network
 
 + A **lightweight Docker-based/RTOS simulator-based** setup simulating a CAN bus network using the virtual vcan0 interface.
-+ Includes **services to send, receive, and log CAN messages**, ideal for early-stage HIL testing or validating CAN communication logic.
++ Includes **services to send, receive, and log CAN messages**, ideal for early-stage HIL/SIL testing or validating CAN communication logic.
 + Easily extendable to interface with physical CAN devices connected to the host (e.g., via SocketCAN-compatible USB adapters).
 + Useful for prototyping embedded applications without requiring dedicated hardware.
 
