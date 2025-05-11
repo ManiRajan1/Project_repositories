@@ -1,6 +1,6 @@
 ## Virtual HIL testing by Docker
 
-This branch provides a demonstration of simulating a CAN network for a HIL simulation using Docker images. This is purely a virtual HIL simulation.
+This branch aims to provide a demonstration of simulating a CAN network for a HIL simulation in a virtual environment.
 
 Many embedded simulations rely on network interfaces. The Linux kernel treats CAN like a network layer, and to simulate it virtually, we need to load the corresponding driver module — in this case, vcan.
 
@@ -18,6 +18,7 @@ In order to run the PoC, run the following commands on git bash
 
 **Pre-requisities**
 + Docker-compose
++ python3
 + Checks on bash
   ```bash
   sudo apt update
@@ -73,10 +74,7 @@ On clicking vcan0, the data can be monitored
 
 ![Monitor](../images/Wireshark2.png)
 
-
-
 For queries : raise an [Issue](https://github.com/ManiRajan1/Project_repositories/issues) with the identification of the branch 
-
 
 ## References
 + [SocketCAN -can.txt](https://www.kernel.org/doc/Documentation/networking/can.txt)
