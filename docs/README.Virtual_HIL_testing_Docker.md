@@ -10,7 +10,9 @@ Many embedded simulations rely on network interfaces. The Linux kernel treats CA
 
 **cansend, candump**: Equivalent to CANoe generator and trace windows for sending and capturing frames.
 
-This is basically like creating a minimal, scriptable CAN simulation testbench using only open-source tools and no licensing restrictions.
+This is basically like creating a minimal, scriptable CAN simulation testbench using only open-source tools and no licensing restrictions with the below architecture.
+
+![Image-Architecture](../images/Virtual_Hil_testing_docker.drawio.png)
 
 The code repository of interest can be viewed by [Minimal setup to virtualize CAN bus-simulation](https://github.com/ManiRajan1/Project_repositories/tree/Virtual_HIL_testing_Docker)
 
