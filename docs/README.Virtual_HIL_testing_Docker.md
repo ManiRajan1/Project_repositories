@@ -42,7 +42,47 @@ git clone https://github.com/ManiRajan1/Project_repositories.git
 cd Project_repositories/
 git fetch origin Virtual_HIL_testing_Docker:Virtual_HIL_testing_Docker
 git checkout Virtual_HIL_testing_Docker
-docker-compose up
+python3 -m venv .venv
+source .venv/bin/activate 
+python3 -m pip3 install -r requirements.txt
+sudo apt install -Y wireshark
+sudo ./simulation/Docker/can_simulator.sh
 ``` 
+Considering there is gcc preinstalled, run the following commands
+**Terminal1**
+``` bash
+gcc -o simulation/simulator_ECU1/can_sim_ECU1.out simulation/simulator_ECU1/can_sim_ECU1.c
+./simulation/simulator_ECU1/can_sim_ECU1.out 
+```
+**Terminal2**
+``` bash
+python3 ./simulation/simulator_ECU2/can_sim_ECU2.py 
+```
+
+The transmitted and received data are shown in both the terminals. This can be coupled with a stream of modelled data to simulate a HIL system.
+
+The data can also be visualized quickly by network protocol analyzers like Wireshark.
+
+``` bash
+sudo wireshark
+```
+![Wireshark Home](../images/Wireshark1.png)
+
+On clicking vcan0, the data can be monitored
+![Monitor](../images/Wireshark2.png)
+
+
 
 For queries : raise an [Issue](https://github.com/ManiRajan1/Project_repositories/issues) with the identification of the branch 
+
+
+## References
+[SocketCAN -can.txt](https://www.kernel.org/doc/Documentation/networking/can.txt)
+[Python-CAN](https://python-can.readthedocs.io/en/stable/bus.html)
+[Virtual CAN](https://netmodule-linux.readthedocs.io/en/latest/howto/can.html)
+[Cisco dump from WireShark](https://www.wireshark.org/docs/man-pages/ciscodump.html)
+
+## Improvements
++ A single docker compose stack that sets up and orchestrates the complete stack for a developer to start testing on one-click
++ A documentation demonstrating the usage of the tool.
+

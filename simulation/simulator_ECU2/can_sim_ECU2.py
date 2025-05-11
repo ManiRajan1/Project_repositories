@@ -44,6 +44,7 @@ def compute_fake_crc(data):
 bus = can.interface.Bus(interface='socketcan', channel='vcan0', bitrate=500000)
 data_to_send = [0x07,0x00,0x00]
 crc = compute_fake_crc(data_to_send)
+data_to_send.append(crc)
 
 # Enable if you donot want to see loopback
 # bus.set_filters([{"can_id": fid, "can_mask": 0x7FF} for fid in filter_ids])
@@ -51,7 +52,6 @@ crc = compute_fake_crc(data_to_send)
 # Sender Thread
 def sender_thread():
     while running:
-        data_to_send.append(crc)
         msg = can.Message(arbitration_id=own_can_id, data=data_to_send, is_extended_id=False)
         try:
             bus.send(msg)
@@ -67,8 +67,8 @@ def receiver_thread():
             msg = bus.recv(timeout=5)
             if msg is not None and msg.arbitration_id in filter_ids:
                 print(f"[ECU2][RECV] ID=0x{msg.arbitration_id:X}, Data={list(msg.data)}")
-            elif msg is not None and msg.arbitration_id == own_can_id:
-                print ()
+            if msg is not None and msg.arbitration_id == own_can_id:
+                print (f"[ECU2][LOOPBACK] ID=0x{msg.arbitration_id:X}, Data={list(msg.data)}")
         except can.CanError as e:
             print(f"[ECU2][ERROR] Receive failed: {e}")
 

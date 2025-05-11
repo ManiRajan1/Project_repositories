@@ -25,7 +25,7 @@ unsigned char fake_crc(unsigned char *data, int len) {
 void *sender(void *arg) {
     struct can_frame frame;
     while (1) {
-        frame.can_id  = ECU2;
+        frame.can_id  = ECU1;
         frame.can_dlc = 4;
         frame.data[0] = 0xAB;
         frame.data[1] = 0xCD;
@@ -41,16 +41,29 @@ void *sender(void *arg) {
 
 void *receiver(void *arg) {
     struct can_frame frame;
+    unsigned char message_read_flag = 0; 
     while (1) {
         if (read(s, &frame, sizeof(struct can_frame)) > 0) {
-            if (frame.can_id == ECU1) {
+            if (frame.can_id != ECU1) {
                 printf("\033[0;34m[ECU1] Received: ");
                 for (int i = 0; i < frame.can_dlc; i++)
                     printf("%02X ", frame.data[i]);
                 printf("\033[0m\n");
-            } else {
-                printf("\033[0;31m[ECU1] Ignored msg ID: 0x%x\033[0m\n", frame.can_id);
+                message_read_flag = 1;
+            } 
+            if (frame.can_id == ECU1)
+            {
+                printf("\033[0;34m[ECU1] Loopback: ");
+                for (int i = 0; i < frame.can_dlc; i++)
+                    printf("%02X ", frame.data[i]);
+                printf("\033[0m\n");
+                message_read_flag = 1;
             }
+            if (message_read_flag == 0)
+             {
+                printf("\033[0;31m[ECU1] No valid message received:\033\n");
+            }
+            message_read_flag == 0;
         }
     }
     return NULL;
