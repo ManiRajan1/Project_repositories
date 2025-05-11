@@ -69,6 +69,7 @@ sudo wireshark
 ![Wireshark Home](../images/Wireshark1.png)
 
 On clicking vcan0, the data can be monitored
+
 ![Monitor](../images/Wireshark2.png)
 
 
@@ -77,12 +78,12 @@ For queries : raise an [Issue](https://github.com/ManiRajan1/Project_repositorie
 
 
 ## References
-[SocketCAN -can.txt](https://www.kernel.org/doc/Documentation/networking/can.txt)
-[Python-CAN](https://python-can.readthedocs.io/en/stable/bus.html)
-[Virtual CAN](https://netmodule-linux.readthedocs.io/en/latest/howto/can.html)
-[Cisco dump from WireShark](https://www.wireshark.org/docs/man-pages/ciscodump.html)
++ [SocketCAN -can.txt](https://www.kernel.org/doc/Documentation/networking/can.txt)
++ [Python-CAN](https://python-can.readthedocs.io/en/stable/bus.html)
++ [Virtual CAN](https://netmodule-linux.readthedocs.io/en/latest/howto/can.html)
++ [Cisco dump from WireShark](https://www.wireshark.org/docs/man-pages/ciscodump.html)
 
 ## Improvements
-+ A single docker compose stack that sets up and orchestrates the complete stack for a developer to start testing on one-click
++ A single docker compose services stack that sets up and orchestrates the complete setup for a developer to start testing on one-click
 + A documentation demonstrating the usage of the tool.
 
