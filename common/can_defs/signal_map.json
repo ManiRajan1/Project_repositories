@@ -3,15 +3,17 @@
     "signals": [
       {
         "name": "LED_TOGGLE",
+        "ECU_name":"ECU1",
+        "Received_can_IDs" : ["0x200","0x210","0x300"],
         "can_id": "0x100",
-        "description": "Toggles LED status",
-        "data": ["0xAA"]
+        "description": "Toggles LED status"
       },
       {
         "name": "HEARTBEAT",
+        "ECU_name":"ECU2",
         "can_id": "0x200",
-        "description": "Heartbeat monitoring signal",
-        "data": ["0x01"]
+        "Received_can_IDs" : ["0x100","0x230","0x300"],
+        "description": "Heartbeat monitoring signal"
       }
     ]
   }
