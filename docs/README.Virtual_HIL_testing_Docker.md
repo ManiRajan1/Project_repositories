@@ -14,9 +14,10 @@ This is basically like creating a minimal, scriptable CAN simulation testbench u
 
 The code repository of interest can be viewed by [Minimal setup to virtualize CAN bus-simulation](https://github.com/ManiRajan1/Project_repositories/tree/Virtual_HIL_testing_Docker)
 
-In order to run the PoC, run the following commands on git bash
+In order to run the PoC, follow the below steps.
 
 **Pre-requisities**
++ For demo purposes debian Linux env (generic/ubuntu2204)
 + Docker-compose
 + python3
 + Checks on bash
@@ -27,10 +28,10 @@ In order to run the PoC, run the following commands on git bash
   ```
 + Once installed, run the check below
   ```bash
-  sudo modprobe   # ✅ should work without extra installs
+  sudo modprobe vcan  # ✅ should work without extra installs
   sudo ip link add dev vcan0 type vcan
   sudo ip link set up vcan0
-  candump vcan0   # starts logging
+  candump vcan0 &  # starts logging
   cansend vcan0 123#0FF0F00F  # sends a frame
   ```
 **Getting started**
@@ -43,27 +44,33 @@ git clone https://github.com/ManiRajan1/Project_repositories.git
 cd Project_repositories/
 git fetch origin Virtual_HIL_testing_Docker:Virtual_HIL_testing_Docker
 git checkout Virtual_HIL_testing_Docker
+sudo apt-get udpate
+sudo apt install -y python3.10-venv  # ✅ If prompted run, sudo systemctl restart networkd-dispatcher.service
 python3 -m venv .venv
-source .venv/bin/activate 
-python3 -m pip3 install -r requirements.txt
-sudo apt install -Y wireshark
+source .venv/bin/activate
+python3 -m ensurepip --default-pip
+python3 -m pip install -r requirements.txt
+sudo apt install -y wireshark # ✅ Super-users should be able to catch the packets
+sudo chmod 700 ./simulation/Docker/can_simulator.sh
 sudo ./simulation/Docker/can_simulator.sh
 ``` 
-Considering there is gcc preinstalled, run the following commands
+Considering there is gcc preinstalled, run the following commands in Project_repositories/
 
-**Terminal1**
+**Terminal1** 
 ``` bash
+sudo apt install -y gcc # ✅ Restart the services necessary
 gcc -o simulation/simulator_ECU1/can_sim_ECU1.out simulation/simulator_ECU1/can_sim_ECU1.c
 ./simulation/simulator_ECU1/can_sim_ECU1.out 
 ```
 **Terminal2**
 ``` bash
+source .venv/bin/activate
 python3 ./simulation/simulator_ECU2/can_sim_ECU2.py 
 ```
 
 The transmitted and received data are shown in both the terminals. This can be coupled with a stream of modelled data to simulate a HIL test bench.
 
-The data can also be visualized quickly by network protocol analyzers like Wireshark.
+The data can also be visualized quickly by network protocol analyzers like Wireshark. Wireshark requires Qt however can be replaced with candump logs provided Qt installation is not available.
 
 ``` bash
 sudo wireshark
