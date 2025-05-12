@@ -87,6 +87,7 @@ For queries : raise an [Issue](https://github.com/ManiRajan1/Project_repositorie
 
 ## References
 + [SocketCAN -can.txt](https://www.kernel.org/doc/Documentation/networking/can.txt)
++ [kernel Documentation  SocketCAN](https://www.kernel.org/doc/html/v5.11/networking/can.html)
 + [Python-CAN](https://python-can.readthedocs.io/en/stable/bus.html)
 + [Virtual CAN](https://netmodule-linux.readthedocs.io/en/latest/howto/can.html)
 + [Cisco dump from WireShark](https://www.wireshark.org/docs/man-pages/ciscodump.html)
