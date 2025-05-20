@@ -11,7 +11,7 @@ To simulate and test ECU behaviors like **ignition control**, **diagnostic state
 - **Perl-based Keyword Driven Framework**: For fast, low-level testing (unit/component simulation)
 - **Robot Framework**: For high-level functional, integration, and acceptance testing
 
-  The stacked test automation provides support in realizing interdependcies between hardware and business usecases, while enabling maintainence of the framework under a single hood.
+Stacked test automation enables the realization of interdependencies between hardware-level behavior and business-level use cases, while allowing the entire framework to be maintained under a unified architecture.
 
 --- 
 
