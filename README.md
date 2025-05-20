@@ -25,6 +25,7 @@ My work emphasizes:
 - **Toolchain Integration**
 - **Compliance with standards** such as **ASPICE**, **ISO 26262**, and **DO-178B**
 
+## Projects Overview
 This repository is a growing collection of **tools and mini-projects** created to address real-world engineering problems across the embedded software lifecycle.
 
 ---
@@ -37,7 +38,6 @@ This repository is a growing collection of **tools and mini-projects** created t
 To Read more:
 [PM_Compliance_handler](https://github.com/ManiRajan1/Project_repositories/blob/PM_Compliance_handler/README.PM-Compliance-handler.md)
 
-## Projects Overview
 ---
 ### XIL testing using Simulated Network
 
@@ -50,13 +50,25 @@ To Read more:
 [Virtual_HIL_testing](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing/README.Virtual_HIL_testing.md)
 
 ---
+### Stacked Test Automation
+
++ The project aims to leverage Perl and Robot Framework in Multi-Layered QA
++ The project demonstrates how both frameworks can interoperate in a layered testing strategy
++ Perl for embedded/functional tests
++ Robot Framework for acceptance, UI, or remote CLI/API tests
++ Showcasing a hybrid automation solution suitable for automotive systems.
+
+To Read more:
+*_Yet to be updated_*
+
+---
 ### Minimal setup of the Yocto Project 
 
 ***In construction***
 A minimal setup of an Yocto project over Poky.
 
 To Read more:
-[Yocto project](https://github.com/ManiRajan1/Project_repositories/blob/Yocto_project/README.Yocto_project.md)
+*_Yet to be updated_*
 
 ---
 
