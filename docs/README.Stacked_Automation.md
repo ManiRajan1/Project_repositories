@@ -16,7 +16,7 @@ To simulate and test ECU behaviors like **ignition control**, **diagnostic state
 ## Test Architecture
 ``` bash
 +----------------------------------------------------------+
-|                       run_all.sh                         |
+|                       run_tests.sh                       |
 |     (Unified Orchestrator for Perl + Robot Tests)        |
 +------------------------+---------------------------------+
                          |
