@@ -62,10 +62,11 @@ To Read more:
 To Read more:
 *_Yet to be updated_*
 
+You can visualize the ideation by [Test Automation Stack](https://github.com/ManiRajan1/Project_repositories/blob/Test_automation_stack/docs/README.Stacked_Automation.md)
+
 ---
 ### Minimal setup of the Yocto Project 
 
-***In construction***
 A minimal setup of an Yocto project over Poky.
 
 To Read more:
