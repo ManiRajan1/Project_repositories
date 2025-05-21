@@ -5,11 +5,11 @@
 ## System Definition & Functional Decomposition (Human + AI)
 
 **Human Input**  
-    +Define system boundaries, functions, operational scenarios (use cases, driving conditions).
++ Define system boundaries, functions, operational scenarios (use cases, driving conditions).
 
 **AI Support**
-    +Use NLP to analyze system architecture documents, requirements specs, and extract key functional elements.
-    +Generate draft functional block diagrams and data flow mappings.
++ Use NLP to analyze system architecture documents, requirements specs, and extract key functional elements.
++ Generate draft functional block diagrams and data flow mappings.
 
 ✅ Tools: GPT-based NLP processors, requirement mining tools (e.g., IBM DOORS + AI plugin).
 
