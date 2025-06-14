@@ -6,4 +6,6 @@ Basic Ignition Test
     Log To Console    Starting Robot Test
     Ignition On
     Sleep    2s
+    Signal In    10
+    Sleep    2s
     Ignition Off
