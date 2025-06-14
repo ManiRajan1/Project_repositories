@@ -13,7 +13,7 @@ This project introduces a virtual test framework using Docker, QEMU, and RTOS si
 
 This approach helps engineering teams deliver higher-quality automotive software faster, while ensuring compliance with standards like ISO 26262 and AUTOSAR communication protocols.
 
-<img src="./images/Abstraction_Virtual_HIL_Testing.png" width = "600" height = "300"/>
+<img src="./images/Abstraction_Virtual_HIL_Testing.png" width = "450" height = "300"/>
 
 ## Strategy 
 
