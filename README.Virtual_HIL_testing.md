@@ -24,7 +24,6 @@ The solutions are classified into four branches:
 + Feature Branches - Each branch focuses on one solution and contains the relevant tooling, Dockerfiles, QEMU configs, or RTOS simulators.
 
   + [Virtual_HIL_testing_Docker](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_Docker/docs/README.Virtual_HIL_testing_Docker.md) :	Simulate high-level Linux application in a Docker container
-  + [Virtual_HIL_testing_QEMU_Linux](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_QEMU/docs/README.Virtual_HIL_testing_QEMU.md) : Emulate an ARM-based Linux target via QEMU inside Docker or standalone
   + [Virtual_HIL_testing_QEMU_Bare](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_bare/docs/README.Virtual_HIL_testing_bare.md) : Use QEMU to emulate ARM (with limited Linux or bare-metal configs)
   + [Virtual_HIL_testing_RTOS](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_RTOS/docs/README.Virtual_HIL_testing_RTOS.md)	Use a bare-metal RTOS simulator like Renode or Keil for precision tests
 
