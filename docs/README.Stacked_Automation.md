@@ -28,7 +28,7 @@ Stacked test automation enables the realization of interdependencies between har
 |   Perl Test Layer |         | Robot Framework Layer  |
 |  (Signal-Level)   |         |  (System-Level Logic)  |
 +-------------------+         +------------------------+
-| - framework1.pl   |         | - framework1.py        |
+| - framework1.pl   |         | - <Robot Framework>    |
 | - testlist.txt    |         | - tests/Test1.robot    |
 | - tests/Test1.par |         | - resources/Keywords.py|
 | - lib/Keywords.pm |         |                        |
