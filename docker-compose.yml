@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:stable 
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    volumes:
+      - ./n8n/data:/home/node/.n8n
+      - ./n8n/workflows:/data/workflows
+      - ./n8n/data/inputs:/data/inputs
+      - ./n8n/data/outputs:/data/outputs
+      - ./ai_models:/ai_models
+    environment:
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - N8N_EDITOR_BASE_URL=http://localhost:5678/
+      - OPENAI_API_KEY=${OPENAI_API_KEY}  # From .env
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${ADMIN_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${ADMIN_PASSWORD}
+      - N8N_DISABLE_PRODUCTION_MAIN_PROCESS=false
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+      - N8N_RUNNERS_ENABLED=true
+      - INPUT_DIR=/data/inputs
+      - OUTPUT_DIR=/data/outputs
+      - NODE_ENV=production
+    networks:
+      - n8n_net
+
+networks:
+  n8n_net:

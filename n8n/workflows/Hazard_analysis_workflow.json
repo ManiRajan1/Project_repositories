@@ -1,0 +1,225 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        380,
+        -100
+      ],
+      "id": "c21a3f97-2516-4503-82f8-f4db5ff0d340",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=const description = {{ $json.data }}.binary.data.toString('utf-8');\\nconst prompt = `Analyze this system for hazards:\\n${description}\\n\\nOutput:\\n1. 5 potential hazards\\n2. Likely root causes\\n3. ISO 26262 relevant clauses`;\\nreturn [{ json: { prompt } }];",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are a helpful assistant"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        940,
+        -100
+      ],
+      "id": "f75201fe-b2e7-47ee-81b9-569c59e24ea8",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        800,
+        200
+      ],
+      "id": "dd6e7cd7-a710-4aec-88d7-3ff721c0343e",
+      "name": "AI_Hazard_Analysis",
+      "credentials": {
+        "openAiApi": {
+          "id": "vrJ0hwKixLk44aS4",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $execution.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1020,
+        180
+      ],
+      "id": "2336bc58-23b7-4e07-a851-3cc641383f5e",
+      "name": "A simple memory window"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/data/inputs/1_hazard_identification/systems_description.txt",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        580,
+        -100
+      ],
+      "id": "6de497e1-78de-4718-b822-e6c11b2a7fee",
+      "name": "Read Systems_Description",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        780,
+        -100
+      ],
+      "id": "b3bdc41c-32f6-4844-9dde-10890d3ce23e",
+      "name": "Convert input to binary data"
+    },
+    {
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "output",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1260,
+        -100
+      ],
+      "id": "24fc87bb-32c5-4cd5-8a93-86d427ff9122",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=/data/outputs/1_hazard_identification/Report_Hazard Identification.txt_{{ $now.toString() }}",
+        "options": {
+          "append": false
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        1480,
+        -100
+      ],
+      "id": "155b8ccd-fcbc-44dc-974c-8c2db909fd5e",
+      "name": "Potential_risks_report.txt",
+      "alwaysOutputData": true
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Read Systems_Description",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI_Hazard_Analysis": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A simple memory window": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Systems_Description": {
+      "main": [
+        [
+          {
+            "node": "Convert input to binary data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert input to binary data": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Potential_risks_report.txt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "413fa66c-03e4-40b2-b4ae-4d4a081fd32e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e23a10c38a84aff056a546290ab44e4d0883223400a2378b1f2a9dd2f5a8af2a"
+  },
+  "id": "Z59iv0jcVPieE4iB",
+  "tags": []
+}
