@@ -9,8 +9,8 @@
 ## :gear: **How It Works**
 ```mermaid
 graph TD
-    A[Engineer uploads<br>system description] --> B(AI identifies hazards)
-    B --> C(AI scores risks per ISO 26262)
+    A[Engineer uploads<br>system description] --> B(LLM identifies hazards)
+    B --> C(LLM scores risks per ISO 26262)
     C --> D(Generates mitigation strategies)
     D --> E(Produces audit-ready reports)
 ```
@@ -26,7 +26,7 @@ graph TD
 
 
 ## :warning: Governance Controls
-+ Human-in-the-loop: All AI outputs require engineer sign-off
++ Human-in-the-loop: All LLM outputs require engineer sign-off
 + Version tracking: Full history of modifications
 + Audit mode: Export all decision rationales
 
