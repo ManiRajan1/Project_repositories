@@ -89,7 +89,7 @@ Note: A detailed description as provided in the [setup](../n8n/data/inputs/1_haz
 - Trigger manually or via webhook
 - Monitor progress in n8n dashboard
 
-4. :open_file_folder: Output files
+4. :open_file_folder: **Output files**
 
 Please find the sample logs as stated below.
 
@@ -98,9 +98,6 @@ Please find the sample logs as stated below.
 | **Hazard ID**       | `n8n/data/outputs/1_hazard_identification/` | `Report_Hazard_Identification_<timestamp>.txt` | List of potential hazards with root causes |
 | **Risk Estimation** | `n8n/data/outputs/2_risk_estimation/`      | `Report_Risk_Estimation_<timestamp>.txt`     | S/E/C ratings and ASIL classifications    |
 | **Mitigation**      | `n8n/data/outputs/3_mitigation_strategy/`  | `Report_Mitigation_<timestamp>.txt`          | Technical/process controls with ISO links |
-
-## :file_folder: Repository structure
-
 
 ## :file_folder: Repository Structure
 ``` bash
@@ -121,7 +118,7 @@ I welcome integrations with:
 + Safety databases (ISO 26262, MIL-STD-882)
 + Addressing any gaps observed in workflow
 
-Contribution Guide:
+### Contribution Guide:
 + Fork the repository
 + Add your integration module in ai_models/ or n8n/workflows/
 + Submit PR with documentation in docs/
@@ -130,7 +127,7 @@ Contribution Guide:
 The github project includes only the workflow of hazard analysis. However, you can purchase the complete version with the prompts and report templates as stated below
 
 ### :euro: Purchase Full Version
-+ Get the paid version complete workflow:
++ Get the paid version complete workflow: *_To be updated_*
 + Download pre-configured package from github
 + Copy n8n/workflows/Full_HARA.json to your instance
 
@@ -144,7 +141,7 @@ Module	Output File
 For collaboration proposals or security issues, contact me by [Email](gopalakrishnan.manirajan@gmail.com).
 
 
-## Warning:warning: Validation & Limitations
+## :warning: Validation & Limitations
 
 ### **AI-Assisted Analysis Considerations**
 | Advantage | Mitigation Strategy | Implementation Example |
