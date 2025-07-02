@@ -1,6 +1,0 @@
-# Credentials
-ADMIN_USER=admin
-ADMIN_PASSWORD=your_secure_password
-
-# API Keys
-OPENAI_API_KEY=*Your_API_key_to_LLM*

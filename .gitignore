@@ -2,13 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-config
-database*
-git
-binaryData
-ssh
-crash.journal*
-n8n/data/nodes
 
 # C extensions
 *.so
