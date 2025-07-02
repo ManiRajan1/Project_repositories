@@ -59,7 +59,10 @@ To Read more:
 + Robot Framework for acceptance, UI, or remote CLI/API tests
 + Showcasing a hybrid automation solution suitable for automotive systems.
 
-To Read more: [Test Automation Stack](https://github.com/ManiRajan1/Project_repositories/blob/Test_automation_stack/docs/README.Stacked_Automation.md)
+To Read more:
+*_Yet to be updated_*
+
+You can visualize the ideation by [Test Automation Stack](https://github.com/ManiRajan1/Project_repositories/blob/Test_automation_stack/docs/README.Stacked_Automation.md)
 
 ---
 ### Minimal setup of the Yocto Project 
