@@ -1,0 +1,45 @@
+1. HZ-01 | No braking when pedestrian suddenly crosses
+   - **Rating**: S3-E3-C2
+   - **ASIL**: D
+   - **Rationale**: Failure to brake for a pedestrian can result in fatalities (S3), this scenario occurs often in urban environments (E3), and is difficult for drivers to control once collision is imminent (C2).
+
+2. HZ-02 | Late braking when a vehicle cuts in abruptly
+   - **Rating**: S2-E3-C2
+   - **ASIL**: C
+   - **Rationale**: Late braking can cause severe injury or crashes (S2), occurs with medium frequency on highways and urban roads (E3), and is difficult to control given short time to react (C2).
+
+3. HZ-03 | Excessive braking triggered by sensor obstruction (e.g., dirt, snow)
+   - **Rating**: S1-E2-C1
+   - **ASIL**: B
+   - **Rationale**: Excessive braking may cause light to moderate injuries (S1), happens with low frequency given environmental controls (E2), but average drivers can often regain control (C1).
+
+4. HZ-04 | Unintended braking due to sensor disagreement (camera vs radar)
+   - **Rating**: S1-E2-C1
+   - **ASIL**: B
+   - **Rationale**: Unintended braking causes minor injuries or hazards (S1), sensor discrepancies are infrequent (E2), and average drivers can usually control the vehicle (C1).
+
+5. HZ-05 | No brake intervention during system overload or transition to manual control
+   - **Rating**: S2-E1-C3
+   - **ASIL**: C
+   - **Rationale**: Failure to brake during system overload or manual handover may result in severe injury (S2), occurs very rarely (E1), and may be uncontrollable in complex situations (C3).
+
+---
+
+**Likely Root Causes:**
+
+- Sensor obstruction by dirt, snow, or weather conditions
+- Electrical interference causing sensor or ECU malfunction
+- Sensor disagreement or data fusion errors between radar and cameras
+- Software overload or timing errors in control algorithms
+- Incorrect or delayed handover logic during transition between automated and manual control
+
+---
+
+**ISO 26262 Relevant Clauses:**
+
+- Clause 6: Hazard Analysis and Risk Assessment (defining ASIL based on S, E, C)
+- Clause 7: Functional Safety Concept (requirements for safe behavior)
+- Clause 8: Technical Safety Concept (design of detection and mitigation mechanisms)
+- Clause 9: Product Development at the Software Level (to address sensor fusion and control logic)
+- Clause 10: Product Development at the Hardware Level (hardware fault tolerance)
+- Clause 11: Production and Operation (monitoring and maintenance to manage sensor obstruction)

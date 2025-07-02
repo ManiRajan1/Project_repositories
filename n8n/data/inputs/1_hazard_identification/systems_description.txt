@@ -1,0 +1,46 @@
+# System Description: ADAS Emergency Braking System
+
+## System Overview
+- **Purpose**: Automatic emergency braking for collision avoidance
+- **Components**: Radar, cameras, ECU, brake actuators, driver warning system
+- **Operating Conditions**: 
+  - Speed range: 5-140 km/h
+  - Environments: Urban, highway, tunnel, rain/snow conditions
+
+## Key Functions
+1. Object detection (vehicles, pedestrians)
+2. Collision risk calculation
+3. Automatic brake application
+4. Driver warning (visual/auditory/haptic)
+5. System status monitoring
+
+## Interfaces
+- **Inputs**: Radar signals, camera images, vehicle speed, GPS
+- **Outputs**: Brake commands, warning signals, system status
+
+## Known Operational Scenarios
+1. Sudden pedestrian crossing
+2. Vehicle cutting in
+3. Stationary object detection
+4. Low visibility conditions
+5. Tunnel entry/exit
+
+## Potential Abnormal Conditions
+- Sensor obstruction (dirt, snow)
+- Electrical interference
+- Extreme weather
+- GPS signal loss
+- High glare situations
+
+# HAZOP Guidewords to Consider
+- No braking when required
+- Late braking
+- Excessive braking
+- Unintended braking
+- Incorrect braking force
+
+# Edge Cases for Analysis
+1. System behavior during sensor disagreement (camera vs radar)
+2. Response to non-standard objects (animals, debris)
+3. Behavior during system overload
+4. Transition between automated and manual control
