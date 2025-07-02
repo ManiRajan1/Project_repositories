@@ -1,0 +1,469 @@
+{
+  "name": "HARA_E2E_workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -680,
+        -120
+      ],
+      "id": "5d95ae17-a4aa-416d-9603-129e65f90f1c",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=const description = {{ $json.data }}.binary.data.toString('utf-8');\\nconst prompt = `Analyze this system for hazards:\\n${description}\\n\\nOutput:\\n1. 5 potential hazards\\n2. Likely root causes\\n3. ISO 26262 relevant clauses`;\\nreturn [{ json: { prompt } }];",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are a helpful FuSA assistant"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -120,
+        -120
+      ],
+      "id": "7a74d970-30f9-4256-bba1-4dd586a7a2a5",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        480,
+        300
+      ],
+      "id": "3682f8df-16a8-4ec5-83ee-cb99121497f3",
+      "name": "AI_Hazard_Analysis",
+      "credentials": {
+        "openAiApi": {
+          "id": "vrJ0hwKixLk44aS4",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $execution.id }}",
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1560,
+        320
+      ],
+      "id": "7ed4df13-d81e-4426-9607-de7cefaa5fb0",
+      "name": "A simple memory window"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/data/inputs/1_hazard_identification/systems_description.txt",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        -120
+      ],
+      "id": "b8e8ff87-3675-4036-8738-31dc1e8e73b5",
+      "name": "Read Systems_Description",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        -120
+      ],
+      "id": "328cd6cc-0d09-460a-98ad-ef23f1f550ca",
+      "name": "Convert input to binary data"
+    },
+    {
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "output",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        220,
+        -120
+      ],
+      "id": "b262dce7-2db9-4f54-a418-534abde45bbc",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=/data/outputs/1_hazard_identification/Report_Hazard Identification.txt_{{ $now.toString() }}",
+        "options": {
+          "append": false
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        440,
+        -120
+      ],
+      "id": "5359da29-26c1-492d-90ab-a8494d809e29",
+      "name": "Potential_risks_report.txt",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=/data/outputs/2_risk_estimation/Report_Risk_Estimation.txt_{{ $now.toString() }}",
+        "options": {
+          "append": false
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        -120
+      ],
+      "id": "cddc0b4a-cfdf-4a62-bbe5-a80a6407657a",
+      "name": "Update_risk_estimation_report",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=const description = \"### Hazards to Analyze:\\n\\t{{ $json.data }}\"",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "Act as a functional safety expert. Analyze these hazards and estimate risk per ISO 26262 (S/E/C). \\n\\tAct as a functional safety expert. Analyze these hazards and estimate risk per ISO 26262 (S/E/C):\\n\\t\\n\\t### Input Hazards:\\n\\t{Insert hazard list from file (1-5)}\\n\\t\\n\\t### Task:\\n\\t1. **Severity (S)**: Assign S0-S3 based on potential injury:\\n\\t\\t- S0: No injuries\\n\\t\\t- S1: Light-moderate injury\\n\\t\\t- S2: Severe/life-threatening injury\\n\\t\\t- S3: Fatalities\\n\\t\\n\\t2. **Exposure (E)**: Rate E0-E4 for scenario probability:\\n\\t\\t- E0: Incredibly unlikely\\n\\t\\t- E1: Very low (≤1% of operating time)\\n\\t\\t- E2: Low (≤10%)\\n\\t\\t- E3: Medium (≤50%)\\n\\t\\t- E4: High (>50%)\\n\\t\\n\\t3. **Controllability (C)**: Classify C0-C3:\\n\\t\\t- C0: Controllable by most drivers\\n\\t\\t- C1: Controllable by average drivers\\n\\t\\t- C2: Difficult to control\\n\\t\\t- C3: Uncontrollable\\n\\t\\n\\t### Output Format:\\n\\tFor each hazard, provide:\\n\\t1. [Hazard ID] | [Hazard Description]\\n\\t2. **Rating**: S[value]-E[value]-C[value]\\n\\t3. **ASIL**: QM/A/B/C/D (per ISO 26262 Table 6)\\n\\t4. **Rationale**: 1-sentence justification\\n\\t\\n\\t### Example Output:\\n\\t1. HZ-01 | False automatic braking triggered by debris\\n\\t\\t- **Rating**: S2-E3-C1\\n\\t\\t- **ASIL**: B\\n\\t\\t- **Rationale**: Sudden braking could cause rear-end collisions (S2), occurs in urban areas (E3), but drivers often regain control (C1).\\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        860,
+        -120
+      ],
+      "id": "d2137c3b-003f-46b6-8b2c-0ab84fd7de52",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        640,
+        -120
+      ],
+      "id": "4db38299-87c5-45df-98bd-f91dbcec829b",
+      "name": "Convert input to binary data1"
+    },
+    {
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "output",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1180,
+        -120
+      ],
+      "id": "9d303ef5-da40-485c-8d5e-4d568fcb67f9",
+      "name": "Convert to File1"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=/data/outputs/3_mitigation_strategy/Report_Risk_mitigation.txt_{{ $now.toString() }}",
+        "options": {
+          "append": false
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        -120
+      ],
+      "id": "4a382915-1e35-4b40-acfd-d04a1ef4e3e2",
+      "name": "Risks_mitigation.txt",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Generate ISO 26262-compliant mitigation strategies for these ASIL-rated hazards:\\n\\n{{$json.data}}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "**Role**: Functional Safety Engineer (ISO 26262 Expert)  \n**Task**: Generate technical and process mitigations for ASIL-rated hazards for each hazard.  \n**Input**: Hazard list with S/E/C ratings and ASIL classifications  \n\n---\n\n### **Rules for Mitigation Design**\n1. **ASIL-Driven Controls**:\n   - ASIL D: Mandatory hardware redundancy + SIL-4 software  \n   - ASIL C: One safety mechanism + SIL-3 software  \n   - ASIL B: Diagnostic monitoring + SIL-2  \n   - ASIL A/QM: Warning systems or procedural controls  \n\n2. **Mitigation Types**:\n   - **Technical**:  \n     - Redundancy (e.g., dual-channel sensors)  \n     - Monitoring (e.g., heartbeat checks)  \n     - Diversity (e.g., heterogeneous algorithms)  \n   - **Process**:  \n     - Testing (e.g., 100% MC/DC coverage)  \n     - Documentation (e.g., safety case evidence)  \n     - Maintenance (e.g., OTA update protocols)  \n\n3. **ISO 26262 Alignment**:  \n   - Clause 5: Hardware qualification  \n   - Clause 6: Software safety requirements  \n   - Clause 7: Verification and validation  \n\n---\n\n### **Output Format**\n```markdown\n### [Hazard ID] | [Hazard Description] (ASIL X)\n- **Technical Controls**:\n  1. [Solution 1] (ISO 26262-[Clause]-[Section])  \n     - *Rationale*: [1-sentence justification]  \n  2. [Solution 2]  \n     - *Rationale*: [1-sentence justification]  \n- **Process Controls**:  \n  - [Measure] (ISO 26262-[Clause]-[Section])  \n    - *Validation Method*: [Test/Review/Analysis]  \n\n**Traceability**: Links to [Hazard ID], [Risk Rating]  "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        -120
+      ],
+      "id": "b7a292b2-277e-4831-ad6f-ce689070e926",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        -120
+      ],
+      "id": "e7e2180f-9bcc-4ff3-a807-49ae2eba9ffd",
+      "name": "Convert input to binary data2"
+    },
+    {
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "output",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        2120,
+        -120
+      ],
+      "id": "0be1af89-2253-4fe2-bf17-baf39b1c2730",
+      "name": "Convert to File2"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Read Systems_Description",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI_Hazard_Analysis": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A simple memory window": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "AI Agent2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Systems_Description": {
+      "main": [
+        [
+          {
+            "node": "Convert input to binary data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert input to binary data": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Potential_risks_report.txt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert input to binary data1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File1": {
+      "main": [
+        [
+          {
+            "node": "Update_risk_estimation_report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Convert to File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert input to binary data2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File2": {
+      "main": [
+        [
+          {
+            "node": "Risks_mitigation.txt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Potential_risks_report.txt": {
+      "main": [
+        [
+          {
+            "node": "Convert input to binary data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update_risk_estimation_report": {
+      "main": [
+        [
+          {
+            "node": "Convert input to binary data2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Risks_mitigation.txt": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "fc97d1e1-986b-4181-8ae7-a3054c97d3ba",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e23a10c38a84aff056a546290ab44e4d0883223400a2378b1f2a9dd2f5a8af2a"
+  },
+  "id": "Z59iv0jcVPieE4iB",
+  "tags": ["safety", "ISO26262", "AI"]
+}

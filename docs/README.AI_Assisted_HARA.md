@@ -123,19 +123,6 @@ I welcome integrations with:
 + Add your integration module in ai_models/ or n8n/workflows/
 + Submit PR with documentation in docs/
 
-## Full version
-The github project includes only the workflow of hazard analysis. However, you can purchase the complete version with the prompts and report templates as stated below
-
-### :euro: Purchase Full Version
-+ Get the paid version complete workflow: *_To be updated_*
-+ Download pre-configured package from github
-+ Copy n8n/workflows/Full_HARA.json to your instance
-
-### :page_facing_up: Sample Reports
-Module	Output File
-[Hazard ID](../n8n/data/outputs/1_hazard_identification)
-[Risk Estimation](../n8n/data/outputs/2_risk_estimation)
-[Risk mitigation with traceability information](../n8n/data/outputs/3_mitigation_strategy/)
 
 ### :email: Contact
 For collaboration proposals or security issues, contact me by [Email](gopalakrishnan.manirajan@gmail.com).
