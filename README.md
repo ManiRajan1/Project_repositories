@@ -51,6 +51,15 @@ To Read more:
 [Virtual_HIL_testing](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing/README.Virtual_HIL_testing.md)
 
 ---
+
+### AI Assisted HARA 
+
++ The project aims to assist a Functional Safety Engineer, Function Owner or a Test Engineer to perform (or) brainstorm over the system requirements.
++ This tool can make your HARA analysis and mitigation sessions effective based on your domain expertise along with the system requirements, which are fed into an workflow.
++ Infrastructure-as-a-Service Option: Organizations with DevOps capabilities can host this as a private safety Co-pilot, delivering continuous ISO 26262 analysis alongside engineering workflows.
+
+To read more: [AI Assited HARA](https://github.com/ManiRajan1/Project_repositories/blob/AI_Assisted_HARA/docs/README.AI_Assisted_HARA.md)
+
 ### Stacked Test Automation
 
 + The project aims to leverage Perl and Robot Framework in Multi-Layered QA
@@ -60,8 +69,6 @@ To Read more:
 + Showcasing a hybrid automation solution suitable for automotive systems.
 
 To Read more:
-*_Yet to be updated_*
-
 You can visualize the ideation by [Test Automation Stack](https://github.com/ManiRajan1/Project_repositories/blob/Test_automation_stack/docs/README.Stacked_Automation.md)
 
 ---
