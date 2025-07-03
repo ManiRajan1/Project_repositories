@@ -89,7 +89,13 @@ Note: A detailed description as provided in the [setup](../n8n/data/inputs/1_haz
 - Trigger manually or via webhook
 - Monitor progress in n8n dashboard
 
-4. :open_file_folder: **Output files**
+4. **Additional notes Observed Issues**
+- On your first login, you might need to update a form to create a new account. This is local to your target machine and saved into a `sqlite database`
+- Provided the credentials of Open AI are missing in the workflow. add the following:
+    - Node: `AI hazard Analysis` ->  Create new credential -> API Key : {{ $env.OPENAI_API_KEY }}.
+    - It imports the API Key defined by your docker-compose.yaml
+
+5. :open_file_folder: **Output files**
 
 Please find the sample logs as stated below.
 
