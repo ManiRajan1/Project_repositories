@@ -1,1 +1,2 @@
-robotframework==7.3
+robotframework
+python-can
