@@ -3,6 +3,11 @@ The aim of this project is to provide a set of modular and reusable API handler 
 This objective of this project is to provide a solution for developers to update the necessary data for ASPICE assessments during the implementation, also automating the reports with compliance.
 Imagine a situation when developer need not spend time on process compliance but just do it as they progress on the work!!
 
+A general architecture of the project - as follows:
+<p align="center">
+  <img src="./docs/Architecture_diagram.drawio.png" />
+</p>
+
 The entire project is demonstrated by two sections.
 ### Section 1:
 In this section samples of metadata produced by the config management tools are included by the structure
