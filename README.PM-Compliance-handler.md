@@ -1,7 +1,7 @@
 ## Automated Project Compliance and Report Generation Handlers
-The aim of this project is to provide a set of modular and reusable API handler libraries that enable seamless integration and management of projects running on popular CI/CD platforms.
-This objective of this project is to provide a solution for developers to update the necessary data for ASPICE assessments during the implementation, also automating the reports with compliance.
-Imagine a situation when developer need not spend time on process compliance but just do it as they progress on the work!!
+The aim of this project is to provide a set of modular and reusable API handler libraries that enable seamless integration and management of projects running on popular CI/CD platforms and to provide a solution for developers to update the necessary data for audits and assessments compliance (E.g. ASPICE compliance) during the implementation, while also automating the report generation.
+
+Imagine a situation when developers need not spend time on process compliance but just comply with process as they progress on the work!!
 
 A general architecture of the project - as follows:
 <p align="center">
@@ -36,15 +36,15 @@ In this section samples of metadata produced by the config management tools are 
     ├── report_template.html
     └── test_report_example.html
 ```
-The folder contains metadata created for this project and is not replicated from any existing source. Ideally the data is expected to created by data collectors (E.g. REST API calls) on specific time intervals such that the infrastructure is not overloaded and criticallity of the data.
+The folder contains metadata created for this project and is not replicated from any existing source. Ideally the data is expected to created by data collectors (E.g. REST API calls, Graph QL calls) on specific time intervals such that the infrastructure is not overloaded and criticallity of the data.
 
-The report template has the jinja2 template of the resultant html and an example of the report [To Download](https://github.com/ManiRajan1/Project_repositories/blob/PM_Rest_API_handler/report_templates/test_report_example.html)
+The report template is created by jinja2 syntax supporting dynamic html updates. An example of the report can be download [here](https://github.com/ManiRajan1/Project_repositories/blob/PM_Rest_API_handler/report_templates/test_report_example.html).
 
 ### Section 2: 
 
 These handlers are designed to interact with services like issue trackers (e.g., JIRA), documentation platforms (e.g., Confluence), and source control tools (e.g. GitLab), allowing for automated retrieval, processing, and analysis of project data.
 
-In addition these API wrappers are created such that the API requests donot stress the infrastructure and aid to generate automated reports — such as test execution summaries, pipeline statuses, and release notes — to support continuous monitoring, traceability, and decision-making in DevOps workflows.
+In addition these API wrappers are created such that the API requests donot stress the infrastructure (introducing throttling mechanism and timeout strategy on requests) and aid to generate automated reports — such as test execution summaries, pipeline statuses, and release notes — to support continuous monitoring, traceability, and decision-making in DevOps workflows.
 
 The project_utilities includes a data collector that creates 
     - traceability matrix 
@@ -66,6 +66,8 @@ The related files are as below:
 
 The code repository of interest can be viewed by [PM_Compliance_handlers](https://github.com/ManiRajan1/Project_repositories/tree/PM_Rest_API_handler) 
 
+
+## Usage
 In order to run the tool to extract a report based on your metadata:
 Replace your metadata into the files from *_./data_* and run the below commands in a bash shell.
 
