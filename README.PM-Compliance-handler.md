@@ -1,4 +1,4 @@
-## Automated Project Compliance and Report Generation Handlers
+## Automated Process Compliant Report Generation
 The aim of this project is to provide a set of modular and reusable API handler libraries that enable seamless integration and management of projects running on popular CI/CD platforms and to provide a solution for developers to update the necessary data for audits and assessments compliance (E.g. ASPICE compliance) during the implementation, while also automating the report generation.
 
 Imagine a situation when developers need not spend time on process compliance but just comply with process as they progress on the work!!
