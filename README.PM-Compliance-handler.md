@@ -5,7 +5,7 @@ Imagine a situation when developer need not spend time on process compliance but
 
 A general architecture of the project - as follows:
 <p align="center">
-  <img src="./docs/Architecture_diagram.drawio.png" />
+  <img src="./docs/Architecture _Diagram.drawio.png" />
 </p>
 
 The entire project is demonstrated by two sections.
