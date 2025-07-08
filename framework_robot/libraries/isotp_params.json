@@ -1,0 +1,18 @@
+{
+  "stmin": 32,
+  "blocksize": 8,
+  "wftmax": 0,
+  "tx_data_length": 8,
+  "tx_data_min_length": null,
+  "tx_padding": 0,
+  "rx_flowcontrol_timeout": 1000,
+  "rx_consecutive_frame_timeout": 1000,
+  "override_receiver_stmin": null,
+  "max_frame_size": 4095,
+  "can_fd": false,
+  "bitrate_switch": false,
+  "rate_limit_enable": false,
+  "rate_limit_max_bitrate": 1000000,
+  "rate_limit_window_size": 0.2,
+  "listen_mode": false
+}

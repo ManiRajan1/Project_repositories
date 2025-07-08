@@ -5,7 +5,7 @@ Library    ../../.venv/lib/python3.12/site-packages/robot/libraries/OperatingSys
 
 *** Test Cases ***
 Test CAN Communication
-    Connect To CAN    can0
+    Connect To CAN    vcan0
     Send CAN Message    0x123    01 02 03   
     ${CAN_LOG_FILE}=    Normalize Path    ${CURDIR}/../outputs/output.blf
     Create File    ${CAN_LOG_FILE}

@@ -1,5 +1,5 @@
 import time
-import logging
+import logging, isotp, can
 from robot.api import logger
 from udsoncan.client import Client
 from udsoncan.connections import PythonIsoTpConnection
@@ -11,10 +11,15 @@ class ECULibrary:
         self.client = None
         self.logger = logging.getLogger(__name__)
 
-    def connect_to_ecu(self, tx_id=0x7E0, rx_id=0x7E8, interface="can0"):
+    def connect_to_ecu(self, tx_id=0x7E0, rx_id=0x7E8, interface="socketcan", channel = "vcan0"):
         """Connect to ECU via UDS (Robot Keyword)"""
         try:
-            self.conn = PythonIsoTpConnection(interface, rxid=rx_id, txid=tx_id)
+
+            self.bus = can.Bus(channel=channel, interface=interface)
+            notifier = can.Notifier(self.bus, [can.Printer()])  
+            tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=tx_id, rxid=rx_id)
+            stack = isotp.NotifierBasedCanStack(bus=self.bus, notifier=notifier, address=tp_addr)
+            self.conn = PythonIsoTpConnection(stack)
             self.client = Client(self.conn)
             self.client.connect()
             logger.info(f"Connected to ECU (TX: 0x{tx_id:X}, RX: 0x{rx_id:X})")
