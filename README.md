@@ -7,8 +7,8 @@
 - [Projects Overview](#projects-overview)
   - [Automated Project Compliance and Report Generation Handlers](#automated-project-compliance-and-report-generation-handlers)
   - [XIL Testing Using Simulated Network](#xil-testing-using-simulated-network)
+  - [AI Assisted HARA](#ai-assisted-hara) 
   - [Stacked Test Automation](#stacked-test-automation)
-  - [Minimal Setup of the Yocto Project](#minimal-setup-of-the-yocto-project)
 - [Getting Started](#-getting-started)
 
 
@@ -72,14 +72,6 @@ To read more: [AI Assited HARA](https://github.com/ManiRajan1/Project_repositori
 
 To Read more:
 You can visualize the ideation by [Test Automation Stack](https://github.com/ManiRajan1/Project_repositories/blob/Test_automation_stack/docs/README.Stacked_Automation.md)
-
----
-### Minimal setup of the Yocto Project 
-
-A minimal setup of an Yocto project over Poky.
-
-To Read more:
-*_Yet to be updated_*
 
 ---
 
