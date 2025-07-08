@@ -1,10 +1,10 @@
-# 🚗 Stacked Test Automation
+# :car: Stacked Test Automation
 
 This project demonstrates a **hybrid automation framework** for testing simulated Electronic Control Unit (ECU) functionalities. It combines the power of **Perl** for low-level, keyword-driven tests and **Robot Framework** for high-level, system-wide verification.
 
 ---
 
-## 🎯 Objective
+## :dart: Objective
 
 To simulate and test ECU behaviors like **ignition control**, **diagnostic state changes**, and **CAN message verification** using:
 
@@ -15,7 +15,10 @@ Stacked test automation enables the realization of interdependencies between har
 
 --- 
 
-## Test Architecture
+## Architecture
+
+The test architecture includes only the Perl and Robot tests and will be adapated to include the pytest framework in future
+
 ``` bash
 +----------------------------------------------------------+
 |                       run_tests.sh                       |
@@ -45,37 +48,39 @@ Stacked test automation enables the realization of interdependencies between har
 
 ---
 
-## 🧪 Example Use Cases
+## :test_tube: Example Use Cases
 
-- ⚙️ Simulated CAN frame state testing via Perl
-- 📋 Log scraping and state monitoring via Robot Framework
-- 🚦 Integration testing of full startup sequences
-- 🔌 Business usecase and Low level usecase handled by a single testbed
+- :toolbox: Simulated CAN frame state testing via Perl
+- :clipboard: Log scraping and state monitoring via Robot Framework
+- :vertical_traffic_light: Integration testing of full startup sequences
+- :electric_plug: Business usecase and Low level usecase handled by a single testbed
 
 ---
 
-## 📁 Directory Structure
+## :file_folder: Directory Structure
 
 ``` bash
-.
-├── framework1.pl               # Perl test runner
-├── framework1.py               # Robot Framework runner
-├── lib/
-│   └── Keywords.pm             # Perl module for keyword logic
-├── resources/
-│   └── Keywords.py             # Python keyword library for Robot Framework
-├── tests/
-│   ├── Test1.par               # Perl test case file (plain text keywords)
-│   └── Test1.robot             # Robot Framework test case
-├── testlist.txt                # List of Perl test files to execute
-├── run_tests.sh                # Shell script to run both frameworks
-└── docs                        # Documentation with architecture and usage
-
+├── framework_perl_automation/  # Framework specific files using perl
+│   ├── libraries/              # Perl module files
+│   └── tests/                  # Perl test parameter files
+├── framework_pytest/           # Pytest framework (specific to unit testing)
+├── framework_robot/            # Robot framework files
+│   ├── config/                 # Configuration for multiple variants
+│   ├── __init__.robot          # Initialization steps (E.g. global setup, teardown)
+│   ├── libraries/              # Library files (*.py)
+│   ├── outputs/                # logs (export ROBOT_OPTIONS="--outputdir")
+│   ├── resources/              # user-defined keywords
+│   └── tests/                  # test files
+├── requirements.txt            # dependencies for python
+├── run_tests.sh                # orchestrator
+├── simulator/                  # mocks to test the framework
+├── testlist.txt                # testlist for perl automation framework
+└── docs/                       # Documentation of the 
 ```
 
 ---
 
-## 🚀 Running the Tests
+## :rocket: Running the Tests
 
 Make the script executable and run:
 
@@ -86,7 +91,7 @@ chmod +x run_all.sh
 
 --- 
 
-## 🔧 Dependencies
+## :link: Dependencies
 
 + Perl 5+ with basic modules (strict, warnings)
 + Python 3.6+
@@ -94,13 +99,13 @@ chmod +x run_all.sh
 
 ---
 
-## 🔄 Extending the Framework
+## :arrows_counterclockwise: Extending the Framework
 
 + Add more keywords to Keywords.pm or Keywords.py
 + Use .par files for low-level scripted sequences
 + Use .robot files for higher-level workflows
 + Integrate hardware interface (e.g., CAN via SocketCAN or simulated USB HID)
 
-## Contributions
+## :black_nib: Contributions
 
 Contributing PRs and suggestions are welcome! Especially if you can hook this to real or simulated ECUs using QEMU, CAN-utils, or serial interfaces. 🤝
