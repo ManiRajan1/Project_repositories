@@ -40,6 +40,9 @@ class CANLibrary:
             if msg:
                 result = f"ID: 0x{msg.arbitration_id:X}, Data: {msg.data.hex()}"
                 logger.info(f"Received: {result}")
+                result = {}
+                result["ID"]= f"0x{msg.arbitration_id:X}"
+                result["Data"]=msg.data.hex() 
                 return result
             logger.warn("No message received")
             return None
