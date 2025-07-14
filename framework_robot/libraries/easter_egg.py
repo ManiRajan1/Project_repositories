@@ -27,6 +27,29 @@ class helpful_functions:
         else:
             logging.error (f"Invalid input")
 
+    def reverse_a_byte (input:int,output:int=None):
+        try:
+            if hex(input) < 0xFF:
+                print (f"Value of the input :{hex(input)}")
+                listValues = [0,0,0,0,0,0,0]
+                count=0
+                while (count<7):
+                    bit = input%2
+                    input = input/2
+                    listValues[count]= int(bit)
+                    count+=1
+                listValues.append(int(input))
+
+                output = 0
+                for index in range(len(listValues)-1, -1,-1):
+                    output = output | (listValues[index]<<len(listValues)-index-1)
+                print (f"Value of the inverted output : {hex(output)}")
+            else:
+                print("Input is greater than 0xFF")
+        except Exception as e:
+            print(f"Error in the input {e}")
+
+
 
 if __name__ == "__main__":
     obj1 = helpful_functions()
