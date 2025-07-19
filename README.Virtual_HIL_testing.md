@@ -43,9 +43,7 @@ Virtual_HIL_testing/
 │
 ├── simulation/               # Simulation-specific content (varies by branch)
 │   └── docker/               # Only in docker-linux branch
-│
 │   └── qemu/                 # Only in qemu-linux and qemu-bare branches
-│
 │   └── rtos_sim/             # Only in rtos-sim branch
 │
 ├── tests/
