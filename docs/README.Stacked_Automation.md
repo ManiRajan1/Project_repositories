@@ -1,111 +1,67 @@
-# :car: Stacked Test Automation
+# :control_knobs: Stacked Test Automation
 
-This project demonstrates a **hybrid automation framework** for testing simulated Electronic Control Unit (ECU) functionalities. It combines the power of **Perl** for low-level, keyword-driven tests and **Robot Framework** for high-level, system-wide verification.
-
----
-
-## :dart: Objective
-
-To simulate and test ECU behaviors like **ignition control**, **diagnostic state changes**, and **CAN message verification** using:
-
-- **Perl-based Keyword Driven Framework**: For fast, low-level testing (unit/component simulation)
-- **Robot Framework**: For high-level functional, integration, and acceptance testing
-
-Stacked test automation enables the realization of interdependencies between hardware-level behavior and business-level use cases, while allowing the entire framework to be maintained under a unified architecture.
-
---- 
-
-## Architecture
-
-The test architecture includes only the Perl and Robot tests and will be adapated to include the pytest framework in future
-
-``` bash
-+----------------------------------------------------------+
-|                       run_tests.sh                       |
-|     (Unified Orchestrator for Perl + Robot Tests)        |
-+------------------------+---------------------------------+
-                         |
-          +--------------+----------------+
-          |                               |
-+---------v---------+         +-----------v------------+
-|   Perl Test Layer |         | Robot Framework Layer  |
-|  (Signal-Level)   |         |  (System-Level Logic)  |
-+-------------------+         +------------------------+
-| - framework1.pl   |         | - <Robot Framework>    |
-| - testlist.txt    |         | - tests/Test1.robot    |
-| - tests/Test1.par |         | - resources/Keywords.py|
-| - lib/Keywords.pm |         |                        |
-+-------------------+         +------------------------+
-          |                               |
-+--------------------+        +----------------------------+
-| Keyword Dispatcher |        | Python-Based Robot Keywords|
-| Executes actions   |        | Use 'resources/Keywords.py'|
-| defined in .par    |        |                            |
-+--------------------+        +----------------------------+
-
-         ⬑ Log Files, Execution Results, Traceability JSON
-```
+A **hybrid test automation framework** for testing from individual components to simulated ECU (Electronic Control Unit) functionalities. Designed for extensibility, this project integrates multiple tools under a unified orchestrator while maintaining isolation of logs/results per testing level.
 
 ---
 
-## :test_tube: Example Use Cases
-
-- :toolbox: Simulated CAN frame state testing via Perl
-- :clipboard: Log scraping and state monitoring via Robot Framework
-- :vertical_traffic_light: Integration testing of full startup sequences
-- :electric_plug: Business usecase and Low level usecase handled by a single testbed
-
----
-
-## :file_folder: Directory Structure
-
-``` bash
-├── framework_perl_automation/  # Framework specific files using perl
-│   ├── libraries/              # Perl module files
-│   └── tests/                  # Perl test parameter files
-├── framework_pytest/           # Pytest framework (specific to unit testing)
-├── framework_robot/            # Robot framework files
-│   ├── config/                 # Configuration for multiple variants
-│   ├── __init__.robot          # Initialization steps (E.g. global setup, teardown)
-│   ├── libraries/              # Library files (*.py)
-│   ├── outputs/                # logs (export ROBOT_OPTIONS="--outputdir")
-│   ├── resources/              # user-defined keywords
-│   └── tests/                  # test files
-├── requirements.txt            # dependencies for python
-├── run_tests.sh                # orchestrator
-├── simulator/                  # mocks to test the framework
-├── testlist.txt                # testlist for perl automation framework
-└── docs/                       # Documentation of the 
-```
+## :hammer_and_wrench: Tech Stack
+| Category       | Tools                                                                 |
+|----------------|-----------------------------------------------------------------------|
+| **E2E/Integration** | Robot Framework, Perl + C Sockets (ECU Sim)                           |
+| **Unit Testing**   | pytest (Python), GTest/GMock (C++), Gcov (Coverage)                   |
+| **Linting**       | clang-tidy (C), pylint/black (Python), clippy (Rust)                  |
+| **Orchestration** | Bash (`orchestrator.sh`)                                              |
 
 ---
 
-## :rocket: Running the Tests
-
-Make the script executable and run:
-
+## :open_file_folder: Folder Structure
 ```bash
-chmod +x run_all.sh
-./run_all.sh
+stacked-test-automation/
+├── orchestrator.sh            # Master script to trigger frameworks
+├── configs/                   # Tool-specific configurations
+│   ├── robot/
+│   ├── pytest/
+│   └── gtest/
+├── src/                       # Source code under test
+│   ├── ecu_sim/               # C/Perl ECU simulator
+│   ├── components/            # Isolated components
+│   └── libs/                  # Shared libraries
+├── tests/
+│   ├── 1_unit/                # Unit tests (per language)
+│   │   ├── python/
+│   │   ├── cpp/
+│   │   └── rust/
+│   ├── 2_integration/         # Component integration
+│   ├── 3_system/              # System-level (Robot Framework)
+│   └── 4_ecu/                 # ECU simulation tests
+├── results/                   # **Isolated results by level**
+│   ├── unit/
+│   ├── integration/
+│   └── system/
+├── logs/                      # **Separated logs**
+│   ├── linter/
+│   ├── coverage/
+│   ├── interfaces/
+|   └── E2E/
+└── requirements/              # Tool dependency specs
+    ├── python_requirements.txt
+    ├── c_toolchain.txt
+    └── rust_tools.toml
 ```
 
---- 
+## :arrows_counterclockwise:Integration Rules
+New tools must comply with:
+- Log/Result Isolation: Outputs must respect the `logs/ and results/ hierarchy`.
+- Dependency Specs: Provide a `requirements.txt`-like manifest in `configs/<tool>/`.
+- Namespace Safety: No hardcoded paths; use env vars from `orchestrator.sh`.
 
-## :link: Dependencies
+### Design Philosophy
+- Modularity: Each framework operates independently but can be orchestrated.
+- Traceability: Clear separation of test levels for debugging.
+- Extensibility: New tools integrate via configuration, not code modification.
 
-+ Perl 5+ with basic modules (strict, warnings)
-+ Python 3.6+
-+ robotframework (Install via pip install robotframework)
-
----
-
-## :arrows_counterclockwise: Extending the Framework
-
-+ Add more keywords to Keywords.pm or Keywords.py
-+ Use .par files for low-level scripted sequences
-+ Use .robot files for higher-level workflows
-+ Integrate hardware interface (e.g., CAN via SocketCAN or simulated USB HID)
-
-## :black_nib: Contributions
-
-Contributing PRs and suggestions are welcome! Especially if you can hook this to real or simulated ECUs using QEMU, CAN-utils, or serial interfaces. 🤝
+### Key Features:
+- **Level-Based Isolation**: Results/logs auto-sorted by test phase (unit/integration/system).
+- **Orchestrator Control**: Centralized toolchain management via `orchestrator.sh`.
+- **Language-Agnostic**: Built to support C/Python/Rust with linting/coverage.
+- **ECU Simulation Ready**: Includes Perl/C socket components for automotive testing.
