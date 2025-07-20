@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.12.3 on linux)" generated="2025-07-20T14:32:17.966135" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Suites" source="/media/mrj/Disk_work/Personal_files/Project_repositories/tests/3_system/test_suites">
+<suite id="s1-s1" name="Test1" source="/media/mrj/Disk_work/Personal_files/Project_repositories/tests/3_system/test_suites/Test1.robot">
+<test id="s1-s1-t1" name="Test CAN Communication" line="18">
+<kw name="Connect To Can" owner="CANLibrary" type="SETUP">
+<msg time="2025-07-20T14:32:18.896749" level="INFO">Created a socket</msg>
+<msg time="2025-07-20T14:32:18.897068" level="ERROR">Could not access SocketCAN device vcan0 ([Errno 19] No such device)</msg>
+<msg time="2025-07-20T14:32:18.897761" level="FAIL">OSError: [Errno 19] No such device</msg>
+<arg>${CAN_channel}</arg>
+<doc>Connect to CAN bus (Robot Keyword)</doc>
+<status status="FAIL" start="2025-07-20T14:32:18.882541" elapsed="0.020891">OSError: [Errno 19] No such device</status>
+</kw>
+<tag>Regression_testing</tag>
+<tag>Smoke_testing</tag>
+<status status="FAIL" start="2025-07-20T14:32:18.880533" elapsed="0.023588">Setup failed:
+OSError: [Errno 19] No such device</status>
+</test>
+<test id="s1-s1-t2" name="Test ECU Reset" line="26">
+<kw name="Connect To Can" owner="CANLibrary" type="SETUP">
+<msg time="2025-07-20T14:32:18.908470" level="INFO">Created a socket</msg>
+<msg time="2025-07-20T14:32:18.908786" level="ERROR">Could not access SocketCAN device vcan0 ([Errno 19] No such device)</msg>
+<msg time="2025-07-20T14:32:18.909507" level="FAIL">OSError: [Errno 19] No such device</msg>
+<arg>${CAN_channel}</arg>
+<doc>Connect to CAN bus (Robot Keyword)</doc>
+<status status="FAIL" start="2025-07-20T14:32:18.906897" elapsed="0.005987">OSError: [Errno 19] No such device</status>
+</kw>
+<status status="FAIL" start="2025-07-20T14:32:18.905484" elapsed="0.007977">Setup failed:
+OSError: [Errno 19] No such device</status>
+</test>
+<test id="s1-s1-t3" name="Test VIN Data Read" line="31">
+<kw name="Connect To Can" owner="CANLibrary" type="SETUP">
+<msg time="2025-07-20T14:32:18.916091" level="INFO">Created a socket</msg>
+<msg time="2025-07-20T14:32:18.916250" level="ERROR">Could not access SocketCAN device vcan0 ([Errno 19] No such device)</msg>
+<msg time="2025-07-20T14:32:18.916656" level="FAIL">OSError: [Errno 19] No such device</msg>
+<arg>${CAN_channel}</arg>
+<doc>Connect to CAN bus (Robot Keyword)</doc>
+<status status="FAIL" start="2025-07-20T14:32:18.914988" elapsed="0.003140">OSError: [Errno 19] No such device</status>
+</kw>
+<status status="FAIL" start="2025-07-20T14:32:18.914181" elapsed="0.004314">Setup failed:
+OSError: [Errno 19] No such device</status>
+</test>
+<test id="s1-s1-t4" name="Test Selenium Working" line="43">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-07-20T14:32:18.920364" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com'.</msg>
+<arg>${Login_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-20T14:32:18.919927" elapsed="13.700316"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:input.gNO89b</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-20T14:32:32.621067" elapsed="0.033199"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-07-20T14:32:32.676951" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="f02a1debc835eb286cef6ba7b8e33dae", element="f.FCCD602DDF526E68B6A58861F6342101.d.134925C8E7589402F88D77D597CF8E4F.e.25")&gt;, &lt;selenium.webdriv...</msg>
+<var>${elements}</var>
+<arg>css:input.gNO89b</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-07-20T14:32:32.655001" elapsed="0.022069"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-07-20T14:32:32.678058" level="INFO">Length is 2.</msg>
+<arg>${elements}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-07-20T14:32:32.677565" elapsed="0.000653"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-20T14:32:32.680639" level="INFO">Found 2 elements with the selector</msg>
+<arg>Found ${elements.__len__()} elements with the selector</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-20T14:32:32.679122" elapsed="0.001697"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-20T14:32:32.713364" level="INFO">First element text/value: Google Suche</msg>
+<arg>First element text/value: ${elements[0].get_attribute('value')}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-20T14:32:32.681827" elapsed="0.031720"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-07-20T14:32:32.843345" level="ERROR">Error terminating service process.
+Traceback (most recent call last):
+  File "/media/mrj/Disk_work/Personal_files/Project_repositories/.venv/lib/python3.12/site-packages/selenium/webdriver/common/service.py", line 177, in _terminate_process
+    self.process.terminate()
+  File "/usr/lib/python3.12/subprocess.py", line 2211, in terminate
+    self.send_signal(signal.SIGTERM)
+  File "/usr/lib/python3.12/subprocess.py", line 2203, in send_signal
+    os.kill(self.pid, sig)
+PermissionError: [Errno 13] Permission denied</msg>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-20T14:32:32.717376" elapsed="0.126514"/>
+</kw>
+<status status="PASS" start="2025-07-20T14:32:18.919141" elapsed="13.925010"/>
+</test>
+<status status="FAIL" start="2025-07-20T14:32:18.031772" elapsed="14.813189"/>
+</suite>
+<status status="FAIL" start="2025-07-20T14:32:17.969466" elapsed="14.876617"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression_testing</stat>
+<stat pass="0" fail="1" skip="0">Smoke_testing</stat>
+</tag>
+<suite>
+<stat name="Test Suites" id="s1" pass="1" fail="3" skip="0">Test Suites</stat>
+<stat name="Test1" id="s1-s1" pass="1" fail="3" skip="0">Test Suites.Test1</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-20T14:32:17.969219" level="ERROR">Variable file '/media/mrj/Disk_work/Personal_files/Project_repositories/configs/robot/configs/env_config.yaml' does not exist.</msg>
+<msg time="2025-07-20T14:32:18.897068" level="ERROR">Could not access SocketCAN device vcan0 ([Errno 19] No such device)</msg>
+<msg time="2025-07-20T14:32:18.908786" level="ERROR">Could not access SocketCAN device vcan0 ([Errno 19] No such device)</msg>
+<msg time="2025-07-20T14:32:18.916250" level="ERROR">Could not access SocketCAN device vcan0 ([Errno 19] No such device)</msg>
+<msg time="2025-07-20T14:32:32.843345" level="ERROR">Error terminating service process.
+Traceback (most recent call last):
+  File "/media/mrj/Disk_work/Personal_files/Project_repositories/.venv/lib/python3.12/site-packages/selenium/webdriver/common/service.py", line 177, in _terminate_process
+    self.process.terminate()
+  File "/usr/lib/python3.12/subprocess.py", line 2211, in terminate
+    self.send_signal(signal.SIGTERM)
+  File "/usr/lib/python3.12/subprocess.py", line 2203, in send_signal
+    os.kill(self.pid, sig)
+PermissionError: [Errno 13] Permission denied</msg>
+</errors>
+</robot>

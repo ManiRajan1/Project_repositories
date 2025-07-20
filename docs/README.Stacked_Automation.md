@@ -32,8 +32,7 @@ stacked-test-automation/
 │   │   ├── cpp/
 │   │   └── rust/
 │   ├── 2_integration/         # Component integration
-│   ├── 3_system/              # System-level (Robot Framework)
-│   └── 4_ecu/                 # ECU simulation tests
+│   └── 3_system/              # System-level (Robot Framework)
 ├── results/                   # **Isolated results by level**
 │   ├── unit/
 │   ├── integration/
