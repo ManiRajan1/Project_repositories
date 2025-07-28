@@ -38,7 +38,7 @@ setup_virtual_environment(){
 
 # --- 3. Dynamic Robot Execution ---
 run_robot() {
-    setup_virtual_environment
+    
     # Add both framework and user paths to Robot's search
     PYTHONPATH="$FRAMEWORK_LIBS:$USER_LIBS:$VIRTUAL_ENV_LIBS:$PYTHONPATH" \
     robot \
@@ -49,4 +49,5 @@ run_robot() {
 }
 
 # --- 4. Main ---
+setup_virtual_environment
 run_robot
