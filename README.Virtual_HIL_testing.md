@@ -21,13 +21,13 @@ This approach helps engineering teams deliver higher-quality automotive software
 
 The solutions are classified into four branches:
 
-+ The Base Branch which is [Virtual_HIL_testing]() holds shared infrastructure, documentation, and interfaces (e.g., CAN, UDS config definitions).
++ The Base Branch which is [Virtual_HIL_testing](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing/README.Virtual_HIL_testing.md) holds shared infrastructure, documentation, and interfaces (e.g., CAN, UDS config definitions).
 
-+ Feature Branches - Each branch focuses on one solution and contains the relevant tooling, Dockerfiles, QEMU configs, or RTOS simulators.
++ Feature Branches - Each branch focuses on one solution and contains the relevant tooling, Dockerfiles, QEMU and RTOS configs, or bare metal simulators.
 
-  + [Virtual_HIL_testing_Docker](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_Docker/docs/README.Virtual_HIL_testing_Docker.md) :	Simulate high-level Linux application in a Docker container or QEMU
-  + [Virtual_HIL_testing_QEMU_Bare](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_bare/docs/README.Virtual_HIL_testing_bare.md) : Use QEMU to emulate ARM (with limited Linux or bare-metal configs)
-  + [Virtual_HIL_testing_RTOS](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_RTOS/docs/README.Virtual_HIL_testing_RTOS.md)	Use a bare-metal RTOS simulator like Renode or Keil for precision tests
+  + [Virtual_HIL_testing_Docker](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_Docker/docs/README.Virtual_HIL_testing_Docker.md) :	Simulate high-level Linux application in a Docker container or QEMU 
+  + [Virtual_HIL_testing_RTOS](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_RTOS/docs/README.Virtual_HIL_testing_RTOS.md) : Use QEMU to emulate ARM (with limited Linux or RTOS configs)
+  + [Virtual_HIL_testing_Bare](https://github.com/ManiRajan1/Project_repositories/blob/Virtual_HIL_testing_bare/docs/README.Virtual_HIL_testing_bare.md) : Use a bare-metal simulator like Renode or Keil for precision tests
 
 The folder structure is followed as below:
 ```bash
@@ -43,8 +43,8 @@ Virtual_HIL_testing/
 │
 ├── simulation/               # Simulation-specific content (varies by branch)
 │   └── docker/               # Only in docker-linux branch
-│   └── qemu/                 # Only in qemu-linux and qemu-bare branches
-│   └── rtos_sim/             # Only in rtos-sim branch
+│   └── qemu_and_rtos/                 # Only in qemu-linux and rtos branch
+│   └── bare_metal_sim/             # Only in bare-metal-sim branch
 │
 ├── tests/
 │   ├── integration/
