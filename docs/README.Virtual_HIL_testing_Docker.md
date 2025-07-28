@@ -1,4 +1,5 @@
 ## Virtual HIL testing by Docker
+**Note** : *_This is a patch created to organise the files such that only the simuation environment will be dockerized as an image which has can and ethernet buses accessible by the other services from docker compose_*
 
 This branch aims to provide a demonstration of simulating a CAN network for a HIL simulation in a virtual environment.
 
