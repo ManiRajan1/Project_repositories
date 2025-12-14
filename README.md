@@ -3,20 +3,20 @@
 
 ## 📚 Table of Contents
 
-- [About This Repository](#-about-this-repository)
+- [About This Repository](#about-this-repository)
 - [Projects Overview](#projects-overview)
   - [Automated Project Compliance and Report Generation Handlers](#automated-project-compliance-and-report-generation-handlers)
   - [XIL Testing Using Simulated Network](#xil-testing-using-simulated-network)
   - [AI Assisted HARA](#ai-assisted-hara) 
   - [Stacked Test Automation](#stacked-test-automation)
-- [Getting Started](#-getting-started)
+- [Getting Started](#getting-started)
 
 
 ## Project repository
 
 **Welcome to my page!** 
 
-## 🧑‍💻 About This Repository
+## About This Repository
 
 Welcome to my GitHub! I'm a software enthusiast focused on **Embedded Systems**, with a passion for optimizing development and testing workflows.
 
@@ -75,7 +75,7 @@ You can visualize the ideation by [Test Automation Stack](https://github.com/Man
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 To clone and explore this repository:
 
